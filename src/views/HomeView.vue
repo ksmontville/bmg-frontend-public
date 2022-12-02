@@ -38,7 +38,7 @@ await getData()
     </div>
 
     <div v-if="data.image" class="hero-img m-6">
-      <img :src="data.image.url" :height="data.image.height" width="data.image.width" alt="Landing Page Image">
+      <img :src="data.image.url" :height="data.image.height" :width="data.image.width" :alt="data.image.alt">
     </div>
 
   </div>

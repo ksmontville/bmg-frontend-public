@@ -31,7 +31,12 @@ await getLogo()
     <div class="navbar-items flex flex-row flex-nowrap justify-between items-center p-4">
       <div class="navbar-logo text-xl">
         <router-link :to="{name: 'home'}" @click="isHidden=true">
-          <img class="" :src="data.nav_img.meta.download_url" alt="Black Moon Games logo">
+
+          <div v-if="data.image" class="nav-brand m-6">
+
+            <img :src="data.image.url" :height="data.image.height" :width="data.image.width" :alt="data.image.alt">
+
+          </div>
         </router-link>
       </div>
 

@@ -22,11 +22,18 @@ await getData()
 
 
 <template>
+
   <div class="flex flex-col flex-nowrap bg-blue-900 text-white">
+
     <span v-html="data.banner_text"></span>
     <span v-html="data.banner_subtext"></span>
-    <img :src="data.image.url" :height="data.image.height" :width="data.image.width" alt="Announcement Image">
+
+    <div v-if="data.image" class="banner-img m-6">
+        <img :src="data.image.url" :height="data.image.height" :width="data.image.width" :alt="data.image.alt">
+      </div>
+
   </div>
+
 
 
 </template>
