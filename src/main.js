@@ -11,6 +11,7 @@ import { faFacebook, faDiscord, faTwitter } from "@fortawesome/free-brands-svg-i
 import NavbarComponent from "./components/NavbarComponent.vue"
 import FooterComponent from "./components/FooterComponent.vue"
 import ButtonComponent from "./components/ButtonComponent.vue"
+import BannerComponent from "./components/BannerComponent.vue"
 
 library.add(faFacebook, faDiscord, faTwitter)
 
@@ -22,4 +23,5 @@ app
     .component("Navbar", NavbarComponent)
     .component("Footer", FooterComponent)
     .component("Button", ButtonComponent)
+    .component("Banner", BannerComponent)
     .mount("#app")

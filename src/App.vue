@@ -10,15 +10,23 @@ const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
 
   <div class="wrapper h-screen flex flex-col justify-between">
   <nav class="">
+
     <Suspense>
-      <Navbar api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/6" />
+      <Navbar api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/6/" />
     </Suspense>
+
   </nav>
 
   <main>
+
     <Suspense>
-      <RouterView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/7" />
+      <Banner api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/8/" />
     </Suspense>
+
+    <Suspense>
+      <RouterView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/7/" />
+    </Suspense>
+
   </main>
 
   <footer class="mt-auto">

@@ -37,6 +37,10 @@ await getData()
       <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" />
     </div>
 
+    <div v-if="data.image" class="hero-img m-6">
+      <img :src="data.image.url" :height="data.image.height" width="data.image.width" alt="Landing Page Image">
+    </div>
+
   </div>
 
 
