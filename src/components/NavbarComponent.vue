@@ -26,7 +26,7 @@ await getLogo()
 
 
 <template>
-  <div class="navbar bg-white" :class="isDesktop ? 'flex flex-row justify-between items-center' : '' ">
+  <div class="navbar bg-white text-blue-900" :class="isDesktop ? 'flex flex-row justify-between items-center' : '' ">
 
     <div class="navbar-items flex flex-row flex-nowrap justify-between items-center p-4">
       <div class="navbar-logo text-xl">
