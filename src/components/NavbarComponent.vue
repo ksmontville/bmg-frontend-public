@@ -32,10 +32,8 @@ await getLogo()
       <div class="navbar-logo text-xl">
         <router-link :to="{name: 'home'}" @click="isHidden=true">
 
-          <div v-if="data.image" class="nav-brand m-6">
-
-            <img :src="data.image.url" :height="data.image.height" :width="data.image.width" :alt="data.image.alt">
-
+          <div v-if="data.logo" class="nav-brand p-2">
+            <img :src="data.logo.meta.download_url" height="72" width="72" :alt="data.logo.title">
           </div>
         </router-link>
       </div>
