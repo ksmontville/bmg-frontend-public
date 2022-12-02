@@ -32,22 +32,22 @@ const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
 
 @font-face {
   font-family: "NerkoOne-Regular";
-  src: url("./src/fonts/NerkoOne-Regular.ttf");
+  src: url("../public/fonts/NerkoOne-Regular.ttf");
 }
 
 @font-face {
   font-family: "Exo2";
-  src: url("./src/fonts/Exo2-VariableFont_wght.ttf");
+  src: url("../public/fonts/Exo2-VariableFont_wght.ttf");
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url("./src/fonts/MontserratSubrayada-Regular.ttf");
+  src: url("../public/fonts/MontserratSubrayada-Regular.ttf");
 }
 
 @font-face {
   font-family: "KroneOne";
-  src: url("./src/fonts/KronaOne-Regular.ttf");
+  src: url("../public/fonts/KronaOne-Regular.ttf");
 }
 
 
