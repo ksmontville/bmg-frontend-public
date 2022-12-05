@@ -8,16 +8,17 @@ const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
 
 <template>
 
-  <div class="wrapper h-screen flex flex-col justify-between">
-  <nav class="">
+  <div class="wrapper min-h-screen flex flex-col">
+
+    <nav class="">
 
     <Suspense>
       <Navbar api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/6/" />
     </Suspense>
 
-  </nav>
+    </nav>
 
-  <main>
+  <main class="opacity-85">
 
     <Suspense>
       <Banner api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/8/" />

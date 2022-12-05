@@ -5,6 +5,11 @@ import axios from "axios"
 const props = defineProps({
   apiUrl: String
 })
+
+const shopBtnClick = () => {
+  window.open("https://www.shop-black-moon.com/")
+}
+
 const data = ref("")
 
 const getData = async () => {
@@ -15,11 +20,12 @@ const getData = async () => {
 
 await getData()
 
+
 </script>
 
 <template>
 
-  <div class="hero flex flex-col p-8 gap-6 text-white">
+  <div class="hero flex flex-col p-8 justify-between items-start gap-6 text-white">
 
     <div class="hero-text">
       <span v-html="data.hero_text" class=""></span>
@@ -33,13 +39,12 @@ await getData()
       <p v-html="data.sub_text_two"></p>
     </div>
 
-    <div class="btn hero-btn m-6">
-      <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" />
+    <div v-if="data.image" class="hero-img hero-btn flex flex-row items-center gap-x-6">
+      <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
+      <img class="rounded-full border border-4 border-blue-900" :src="data.image.url" height="64" width="64" :alt="data.image.alt">
     </div>
 
-    <div v-if="data.image" class="hero-img m-6">
-      <img :src="data.image.url" :height="data.image.height" :width="data.image.width" :alt="data.image.alt">
-    </div>
+
 
   </div>
 

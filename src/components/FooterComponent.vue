@@ -5,7 +5,7 @@
 <template>
 
 
-  <div class="flex flex-col justify-center items-center p-4 gap-4 mt-auto bg-white text-black">
+  <div class="opacity-85 flex flex-col justify-center items-center p-8 gap-6 mt-auto bg-white text-black">
 
     <div class="social-media-icons flex flex-row flex-nowrap justify-center items-center gap-6">
       <font-awesome-icon icon="fa-brands fa-facebook" size="2x" color="#1e3a8a" />
