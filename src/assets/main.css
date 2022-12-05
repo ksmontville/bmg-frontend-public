@@ -25,26 +25,24 @@
 }
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   /*padding: 0 2rem;*/
   font-weight: normal;
 
-  background-image: url("/img/background-lg.jpg");
+  background-image: url("/img/background-sm.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#app:before {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;background-image: url("/img/background-lg.jpg");
-
-}
+/*#app:before {*/
+/*  position: fixed;*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  left: 0;*/
+/*  top: 0;*/
+/*}*/
 
 @media (hover: hover) {
   a:hover {
@@ -54,11 +52,31 @@
 
 @media (min-width: 768px) {
 
+  #app {
+  margin: 0 auto;
+  /*padding: 0 2rem;*/
+  font-weight: normal;
+
+  background-image: url("/img/background-md.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
 }
 
 @media (min-width: 1024px) {
   #app {
+  margin: 0 auto;
+  /*padding: 0 2rem;*/
+  font-weight: normal;
 
+  background-image: url("/img/background-lg.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
 }
