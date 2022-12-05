@@ -37,6 +37,15 @@
   background-size: cover;
 }
 
+#app:before {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;background-image: url("/img/background-lg.jpg");
+
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
