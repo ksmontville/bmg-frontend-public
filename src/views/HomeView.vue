@@ -1,4 +1,5 @@
 <script setup>
+import NewProductView from "./NewProductView.vue"
 import {ref} from "vue"
 import axios from "axios"
 
@@ -25,28 +26,33 @@ await getData()
 
 <template>
 
-  <div class="hero flex flex-col p-8 justify-between items-start gap-6 text-white">
+  <div class="landing-wrapper flex flex-row flex-wrap justify-evenly gap-8">
 
-    <div class="hero-text">
-      <span v-html="data.hero_text" class=""></span>
+    <div class="hero flex flex-col p-8 justify-between items-start gap-6 text-white">
+      <div class="hero-text">
+        <span v-html="data.hero_text" class=""></span>
+      </div>
+
+      <div class="hero-subtext-one mt-4">
+        <p v-html="data.sub_text_one" class=""></p>
+      </div>
+
+      <div class="hero-subtext-two mt-6 italic">
+        <p v-html="data.sub_text_two"></p>
+      </div>
+
+      <div v-if="data.image" class="hero-img hero-btn flex flex-row items-center gap-x-6">
+        <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
+<!--        <img class="rounded-full border border-4 border-blue-900" :src="data.image.url" height="64" width="64" :alt="data.image.alt">-->
+      </div>
     </div>
 
-    <div class="hero-subtext-one mt-4">
-      <p v-html="data.sub_text_one" class=""></p>
+    <div class="new-product min-h-fit bg-blue-900 rounded-lg m-8 p-8">
+      <NewProductView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/9"/>
     </div>
-
-    <div class="hero-subtext-two mt-6 italic">
-      <p v-html="data.sub_text_two"></p>
-    </div>
-
-    <div v-if="data.image" class="hero-img hero-btn flex flex-row items-center gap-x-6">
-      <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
-      <img class="rounded-full border border-4 border-blue-900" :src="data.image.url" height="64" width="64" :alt="data.image.alt">
-    </div>
-
-
 
   </div>
+
 
 
 </template>
