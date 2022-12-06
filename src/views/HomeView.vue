@@ -26,9 +26,9 @@ await getData()
 
 <template>
 
-  <div class="landing-wrapper flex flex-row flex-wrap justify-evenly gap-8">
+  <div class="landing-wrapper flex flex-row flex-wrap justify-center items-baseline gap-x-24 gap-y-8 mt-4 mb-4">
 
-    <div class="hero flex flex-col p-8 justify-between items-start gap-6 text-white">
+    <div class="hero flex flex-col p-8 items-start gap-16 text-white">
       <div class="hero-text">
         <span v-html="data.hero_text" class=""></span>
       </div>
@@ -47,7 +47,7 @@ await getData()
       </div>
     </div>
 
-    <div class="new-product min-h-fit bg-blue-900 rounded-lg m-8 p-8">
+    <div class="new-products">
       <NewProductView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/9/" />
     </div>
 
