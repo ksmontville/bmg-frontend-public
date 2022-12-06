@@ -48,7 +48,7 @@ await getData()
     </div>
 
     <div class="new-product min-h-fit bg-blue-900 rounded-lg m-8 p-8">
-      <NewProductView api-url="http://localhost:8000/api/v2/pages/9/" />
+      <NewProductView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/9/" />
     </div>
 
   </div>

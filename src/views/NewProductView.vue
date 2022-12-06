@@ -28,14 +28,10 @@ await getData()
 
     <div class="new-products flex flex-row flex-wrap gap-6">
 
-      <div v-if="data.product_1" class="product-1">
-        <img class="rounded-md" :src="data.product_1[1].value.thumbnail.src" height="100" width="100" :alt="data.product_1[1].value.title">
-        <p v-html="data.product_1[0].value"></p>
-      </div>
+      <div v-for="product in data.new_products" :key="product.id">
+        <p v-html="product.value.description"></p>
+        <img :src="product.value.url" :alt="product.value.alt">
 
-      <div v-if="data.product_2.length !== 0" class="product-2">
-        <img class="rounded-md" :src="data.product_2[1].value.thumbnail.src" height="100" width="100" :alt="data.product_2[1].value.title">
-        <p v-html="data.product_2[0].value"></p>
       </div>
 
     </div>
