@@ -37,7 +37,7 @@ await getData()
 
     </div>
 
-    <div class="flex flex-col justify-center items-center gap-8" id="singlesPageTCGs">
+    <div class="flex flex-col justify-center items-center gap-8 opacity-80" id="singlesPageTCGs">
       <div id="singlesPageSubTextTwo">
         <span v-html="data.sub_text_two"></span>
       </div>
