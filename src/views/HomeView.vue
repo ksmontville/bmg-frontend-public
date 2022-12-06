@@ -64,7 +64,7 @@ await getData()
 
 <style scoped>
 
-.hero-text {
+#heroText {
   font-family: Montserrat, sans-serif;
 }
 

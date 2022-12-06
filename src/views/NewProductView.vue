@@ -29,7 +29,7 @@ await getData()
 
   <div class="flex flex-col min-h-full rounded-lg opacity-80 text-white p-4">
 
-    <div class="bg-white rounded-t-lg mb-6" id="cardTitle">
+    <div class="bg-white rounded-t-lg mb-6" id="cardHeader">
       <h3 v-if="data.title" class="header text-black text-center p-4">{{ data.title }}</h3>
     </div>
 
@@ -68,5 +68,8 @@ await getData()
 
 <style scoped>
 
+#cardHeader {
+  font-family: Montserrat, sans-serif;
+}
 
 </style>

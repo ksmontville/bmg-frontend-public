@@ -25,7 +25,10 @@ await getData()
   <div class="flex flex-col justify-center items-center gap-16 text-white p-8" id="singlesPageWrapper">
 
     <div class="flex flex-col gap-8">
-      <h2 v-html="data.header"></h2>
+
+      <div id="singlesHeader">
+        <h2 v-html="data.header"></h2>
+      </div>
 
       <span v-html="data.text"></span>
 
@@ -37,7 +40,7 @@ await getData()
 
     </div>
 
-    <div class="flex flex-col justify-center items-center gap-8 opacity-80" id="singlesPageTCGs">
+    <div class="flex flex-col justify-center items-center gap-8" id="singlesPageTCGs">
       <div id="singlesPageSubTextTwo">
         <span v-html="data.sub_text_two"></span>
       </div>
@@ -58,5 +61,9 @@ await getData()
 
 
 <style scoped>
+
+#singlesHeader, #singlesPageTCGs {
+  font-family: Montserrat, sans-serif;
+}
 
 </style>
