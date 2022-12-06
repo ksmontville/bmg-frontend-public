@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from "vue"
 import axios from "axios"
-import ButtonComponent from "../components/ButtonComponent.vue";
+import ButtonComponent from "../components/ButtonComponent.vue"
 
 const props = defineProps({
   apiUrl: String
@@ -27,26 +27,26 @@ await getData()
 
 <template>
 
-  <div class="flex flex-col gap-8 min-h-full rounded-lg opacity-80 text-white">
+  <div class="flex flex-col min-h-full rounded-lg opacity-80 text-white">
 
-    <div class="title bg-white rounded-t-lg">
+    <div class="title bg-white rounded-t-lg mb-6">
       <h3 v-if="data.title" class="header text-black text-center p-4">{{ data.title }}</h3>
     </div>
 
-    <div class="new-products flex flex-col flex-wrap justify-center items-center gap-6">
+    <div class="new-products flex flex-row flex-nowrap justify-center gap-6">
 
       <div class="new-product card h-1/2" v-for="product in data.new_products" :key="product.id" :id="product.value.image.thumbnail.alt">
 
-        <div class="card-title text-center">
+        <div class="card-title bg-blue-900 rounded-t-md text-center p-4">
           <h4 v-html="product.value.name"></h4>
         </div>
 
-        <div class="card-body flex flex-row gap-8 p-8 border-b-8 border-white">
+        <div class="card-body rounded-b-md bg-white text-black flex flex-row gap-8 p-8">
 
           <div class="flex flex-col justify-center items-center card-body-left gap-4">
             <img class="rounded-md border-4 border-black" :src="product.value.image.thumbnail.src" :alt="product.value.alt">
               <div class="card-button text-center p-4">
-                <button class="text-lg text-black text-center bg-white rounded-lg p-4" type="button" @click="btnClick(product.value.link)">Buy Now</button>
+                <ButtonComponent button-text="Buy Now" button-class="text-lg text-white border-2 border-black bg-blue-900" @click="btnClick(product.value.link)" />
               </div>
           </div>
 
