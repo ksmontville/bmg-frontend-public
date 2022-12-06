@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from "vue"
 import axios from "axios"
+import Button from "../components/ButtonComponent.vue"
 import SinglesView from "./SinglesView.vue"
 import NewProductView from "./NewProductView.vue"
 
@@ -42,7 +43,7 @@ await getData()
         <p v-html="data.sub_text_two"></p>
       </div>
 
-      <div v-if="data.image" class="flex flex-row items-center gap-x-6" id="heroButton">
+      <div class="flex flex-row items-center gap-x-6" id="heroButton">
         <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
 <!--        <img class="rounded-full border border-4 border-blue-900" :src="data.image.url" height="64" width="64" :alt="data.image.alt">-->
       </div>
