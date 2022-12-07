@@ -33,9 +33,9 @@ await getData()
       <h3 v-if="data.title" class="header text-black text-center p-4">{{ data.title }}</h3>
     </div>
 
-    <div class="flex flex-row flex-wrap justify-center gap-8" id="newProductsCard">
+    <div class="flex flex-row flex-wrap justify-center items-center gap-8" id="newProductsCard">
 
-      <div class="" v-for="product in data.new_products" :key="product.id" :id="product.value.image.thumbnail.alt" id="card">
+      <div v-for="product in data.new_products" :key="product.id" :id="product.value.image.thumbnail.alt" id="card">
 
         <div class="bg-blue-900 rounded-t-md text-center p-4" id="cardTitle">
           <h4 v-html="product.value.name"></h4>
