@@ -46,7 +46,7 @@ await getData()
           <div class="flex flex-col justify-center items-center gap-4" id="cardBodyLeft">
             <img class="rounded-md border-4 border-black" :src="product.value.image.thumbnail.src" :alt="product.value.alt" id="cardImage">
               <div class="text-center" id="cardButton">
-                <ButtonComponent button-text="Buy Now" button-class="text-lg text-white border-2 border-black bg-blue-900" @click="btnClick(product.value.link)" />
+                <ButtonComponent button-text="Buy Now" button-class="text-md text-white border-2 border-black bg-blue-900" @click="btnClick(product.value.link)" />
               </div>
           </div>
 

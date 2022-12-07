@@ -58,7 +58,7 @@ await getData()
       <SinglesView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/10/"/>
     </div>
 
-    <div class="p-8" id="newProductsVIew">
+    <div class="" id="newProductsVIew">
       <NewProductView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/9/" />
     </div>
   </div>
