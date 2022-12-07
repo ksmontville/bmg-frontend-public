@@ -24,7 +24,7 @@ await getData()
 
   <div class="flex flex-col justify-center items-center gap-16 text-white p-8" id="singlesPageWrapper">
 
-    <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-12">
 
       <div id="singlesHeader">
         <h2 v-html="data.header"></h2>

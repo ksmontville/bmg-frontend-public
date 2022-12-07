@@ -20,7 +20,7 @@ await getData()
 
 <template>
 
-  <div v-if="data.banner_text" class="opacity-80 flex flex-col flex-nowrap justify-between items-center bg-blue-900 text-white text-center
+  <div v-if="data.banner_text" class="flex flex-col flex-nowrap justify-between items-center bg-blue-900 text-white text-center
     border-b-4 border-white gap-y-2 p-2">
 
     <span class="" v-html="data.banner_text"></span>

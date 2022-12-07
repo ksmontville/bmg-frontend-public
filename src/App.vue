@@ -18,14 +18,14 @@ const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
 
     </nav>
 
-  <main class="opacity-85">
+  <main class="opacity-80">
 
     <Suspense>
       <Banner api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/8/" />
     </Suspense>
 
     <Suspense>
-      <RouterView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/7/" />
+      <RouterView api-url="http://localhost:8000/api/v2/pages/7/" />
     </Suspense>
 
   </main>

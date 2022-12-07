@@ -28,9 +28,10 @@ await getData()
 
 <template>
 
-  <div class="flex flex-row flex-wrap justify-center items-baseline gap-x-24 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
+  <div class="flex flex-row flex-wrap justify-center items-baseline gap-x-16 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
 
-    <div class="flex flex-col p-8 items-start gap-16 text-white" id="hero">
+    <div class="flex flex-col p-8 items-start gap-8 text-white" id="hero">
+
       <div class="" id="heroText">
         <span v-html="data.hero_text" class=""></span>
       </div>
@@ -45,8 +46,12 @@ await getData()
 
       <div class="flex flex-row items-center gap-x-6" id="heroButton">
         <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
-<!--        <img class="rounded-full border border-4 border-blue-900" :src="data.image.url" height="64" width="64" :alt="data.image.alt">-->
       </div>
+
+<!--      <div v-if="data.hero_image" class="opacity-80" id="heroImage">-->
+<!--              <img class="bg-white border-4 border-blue-900" :src="data.hero_image.meta.download_url"-->
+<!--                   :height="data.hero_image.height" :width="data.hero_image.width" :alt="data.hero_image.alt">-->
+<!--      </div>-->
     </div>
 
     <div class="" id="magicSinglesView">
@@ -56,7 +61,6 @@ await getData()
     <div class="" id="newProductsVIew">
       <NewProductView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/9/" />
     </div>
-
   </div>
 
 
