@@ -8,10 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { } from "@fortawesome/free-solid-svg-icons"
 import { faFacebook, faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
+
 import NavbarComponent from "./components/NavbarComponent.vue"
 import FooterComponent from "./components/FooterComponent.vue"
 import ButtonComponent from "./components/ButtonComponent.vue"
 import BannerComponent from "./components/BannerComponent.vue"
+import EventsComponent from "./components/EventsComponent.vue"
 
 library.add(faFacebook, faDiscord, faTwitter)
 
@@ -24,4 +26,5 @@ app
     .component("Footer", FooterComponent)
     .component("Button", ButtonComponent)
     .component("Banner", BannerComponent)
+    .component("Events", EventsComponent)
     .mount("#app")

@@ -1,8 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
 
-// const apiURL = "http://localhost:8000/api/v2/pages"
-const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
+const apiURLDev = "http://localhost:8000/api/v2/pages"
+const apiURLProd = "https://blackmoongames-dev.herokuapp.com/api/v2/pages"
+
+const apiNav = import.meta.env.VITE_API_NAV
+const apiHome = import.meta.env.VITE_API_HOME
 
 </script>
 
@@ -13,7 +16,7 @@ const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
     <nav class="">
 
     <Suspense>
-      <Navbar api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/6/" />
+      <Navbar :api-url=apiNav />
     </Suspense>
 
     </nav>
@@ -21,11 +24,7 @@ const apiURL = "https://blackmoongames-dev.herokuapp.com/api/v2/pages/"
   <main class="opacity-80">
 
     <Suspense>
-      <Banner api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/8/" />
-    </Suspense>
-
-    <Suspense>
-      <RouterView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/7/" />
+      <RouterView :api-url=apiHome />
     </Suspense>
 
   </main>

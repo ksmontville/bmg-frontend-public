@@ -2,6 +2,7 @@
 import {ref} from "vue"
 import axios from "axios"
 import Button from "../components/ButtonComponent.vue"
+import BannerComponent from "../components/BannerComponent.vue"
 import SinglesView from "./SinglesView.vue"
 import NewProductView from "./NewProductView.vue"
 
@@ -9,8 +10,13 @@ const props = defineProps({
   apiUrl: String
 })
 
+const shopUrl = import.meta.env.VITE_SHOP_URL
+const apiBanner = import.meta.env.VITE_API_BANNER
+const apiProducts = import.meta.env.VITE_API_PRODUCTS
+const apiSingles = import.meta.env.VITE_API_SINGLES
+
 const shopBtnClick = () => {
-  window.open("https://www.shop-black-moon.com/")
+  window.open(`${shopUrl}`)
 }
 
 const data = ref("")
@@ -27,6 +33,10 @@ await getData()
 </script>
 
 <template>
+
+  <Suspense>
+    <BannerComponent :api-url=apiBanner />
+  </Suspense>
 
   <div class="flex flex-row flex-wrap justify-center items-baseline gap-x-16 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
 
@@ -55,11 +65,11 @@ await getData()
     </div>
 
     <div class="" id="magicSinglesView">
-      <SinglesView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/10/"/>
+      <SinglesView :api-url=apiSingles />
     </div>
 
     <div class="" id="newProductsVIew">
-      <NewProductView api-url="https://blackmoongames-dev.herokuapp.com/api/v2/pages/9/" />
+      <NewProductView :api-url=apiProducts />
     </div>
   </div>
 
