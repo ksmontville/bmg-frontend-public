@@ -1,5 +1,5 @@
 <script setup>
-import {reactive, ref} from "vue";
+import {reactive} from "vue";
 import axios from "axios";
 import "@fullcalendar/core/vdom.js"
 import FullCalendar from "@fullcalendar/vue3"
@@ -28,9 +28,8 @@ const getEvents = async () => {
 
 const handleEventClick = (eventClickInfo) => {
   eventClickInfo.jsEvent.preventDefault()
-  console.log(eventClickInfo.event.title)
   for(let i=0; i < events.length; i++) {
-    if( eventClickInfo.event.title === events[i].title) {
+    if(events[i].store_link && eventClickInfo.event.title === events[i].title) {
       window.open(events[i].store_link)
     }
   }
@@ -50,7 +49,6 @@ const calendarOptions = {
 }
 
 await getData()
-
 await getEvents()
 
 </script>
@@ -61,7 +59,7 @@ await getEvents()
   <div class="flex flex-col text-white mb-8">
     <FullCalendar :options="calendarOptions"/>
   </div>
-  
+
 </template>
 
 
