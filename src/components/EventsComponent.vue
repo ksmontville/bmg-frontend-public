@@ -26,16 +26,6 @@ const getEvents = async () => {
   }
 }
 
-
-
-await getData()
-console.log(data.value.length)
-console.log(data.value[0])
-console.log(data.value[1])
-
-await getEvents()
-console.log(events)
-
 const handleEventClick = (eventClickInfo) => {
   eventClickInfo.jsEvent.preventDefault()
   console.log(eventClickInfo.event.title)
@@ -46,16 +36,11 @@ const handleEventClick = (eventClickInfo) => {
   }
 }
 
-const handleDateClick = (event) => {
-  console.log(`${event.target} clicked`)
-}
-
 const calendarOptions = {
   plugins: [dayGridPlugin, interactionPlugin, googleCalendarPlugin],
   initialView: 'dayGridMonth',
   dayMaxEventRows: true,
   eventClick: handleEventClick,
-  dateClick: handleDateClick,
   eventDisplay: "block",
   eventBackgroundColor: "#1e3a8a",
   googleCalendarApiKey: import.meta.env.VITE_CALENDAR_API_KEY,
@@ -64,6 +49,9 @@ const calendarOptions = {
   }
 }
 
+await getData()
+
+await getEvents()
 
 </script>
 
@@ -73,8 +61,7 @@ const calendarOptions = {
   <div class="flex flex-col text-white mb-8">
     <FullCalendar :options="calendarOptions"/>
   </div>
-
-
+  
 </template>
 
 
