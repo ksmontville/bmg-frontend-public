@@ -6,6 +6,9 @@ const props = defineProps({
   apiUrl: String
 })
 
+const shopUrl = import.meta.env.VITE_SHOP_URL
+const singlesUrl = import.meta.env.VITE_SINGLES_URL
+
 const data = ref("")
 const isHidden = ref(true)
 const isDesktop = ref(window.innerWidth >= 768)
@@ -16,7 +19,6 @@ isHidden.value = !isHidden.value
 
 const getLogo = async () => {
   const response = await axios.get(props.apiUrl)
-  console.log(response.data)
   data.value = response.data
 }
 
@@ -51,9 +53,8 @@ await getLogo()
       <div v-show="!isHidden" id="navbarDropdownMobile">
         <div class="flex flex-col flex-nowrap items-start text-lg p-2 pb-6 ml-4 gap-6" id="navbarNavLinksMobile">
           <router-link :to="{name: 'home'}" @click="toggleNav">Home</router-link>
-          <a href="https://www.shop-black-moon.com/" target="_blank" referrerpolicy="no-referrer" @click="toggleNav">Online Store</a>
-<!--          <router-link :to="{name: 'shop'}" @click="toggleNav">Online Store</router-link>-->
-          <router-link :to="{name: 'singles'}" @click="toggleNav">Magic Singles</router-link>
+          <a :href="shopUrl" target="_blank" referrerpolicy="no-referrer" @click="toggleNav">Online Store</a>
+          <a :href="singlesUrl" target="_blank" referrerpolicy="no-referrer" @click="toggleNav">Magic Singles</a>
           <router-link :to="{name: 'events'}" @click="toggleNav">Store Events</router-link>
           <router-link :to="{name: 'about'}" @click="toggleNav">About Us</router-link>
         </div>
@@ -62,11 +63,10 @@ await getLogo()
 
 <!--    Desktop navbar-->
     <div v-else id="navbarDropdownDesktop">
-        <div class="flex flex-row flex-nowrap text-lg p-6 gap-12" id="navbarNavLinksDesktop">
+        <div class="flex flex-row flex-nowrap text-xl p-6 gap-16" id="navbarNavLinksDesktop">
           <router-link :to="{name: 'home'}" @click="toggleNav">Home</router-link>
-          <a href="https://www.shop-black-moon.com/" target="_blank" referrerpolicy="no-referrer" @click="toggleNav">Online Store</a>
-<!--          <router-link :to="{name: 'shop'}" @click="toggleNav">Online Store</router-link>-->
-          <router-link :to="{name: 'singles'}" @click="toggleNav">Magic Singles</router-link>
+          <a :href="shopUrl" target="_blank" referrerpolicy="no-referrer" @click="toggleNav">Online Store</a>
+          <a :href="singlesUrl" target="_blank" referrerpolicy="no-referrer" @click="toggleNav">Magic Singles</a>
           <router-link :to="{name: 'events'}" @click="toggleNav">Store Events</router-link>
           <router-link :to="{name: 'about'}" @click="toggleNav">About Us</router-link>
         </div>

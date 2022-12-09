@@ -6,10 +6,7 @@ import BannerComponent from "../components/BannerComponent.vue"
 import SinglesView from "./SinglesView.vue"
 import NewProductView from "./NewProductView.vue"
 
-const props = defineProps({
-  apiUrl: String
-})
-
+const homeUrl = import.meta.env.VITE_API_HOME
 const shopUrl = import.meta.env.VITE_SHOP_URL
 const apiBanner = import.meta.env.VITE_API_BANNER
 const apiProducts = import.meta.env.VITE_API_PRODUCTS
@@ -22,7 +19,7 @@ const shopBtnClick = () => {
 const data = ref("")
 
 const getData = async () => {
-  const response = await axios.get(props.apiUrl)
+  const response = await axios.get(homeUrl)
   console.log(response.data)
   data.value = response.data
 }

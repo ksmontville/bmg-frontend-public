@@ -12,7 +12,9 @@ import EventsComponent from "../components/EventsComponent.vue"
   </div>
 
   <div class="p-2">
-    <EventsComponent />
+    <Suspense>
+      <EventsComponent />
+    </Suspense>
 
   </div>
 

@@ -24,7 +24,7 @@ const apiHome = import.meta.env.VITE_API_HOME
   <main class="opacity-80">
 
     <Suspense>
-      <RouterView :api-url=apiHome />
+      <RouterView />
     </Suspense>
 
   </main>

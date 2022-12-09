@@ -7,6 +7,12 @@ const props = defineProps({
   apiUrl: String,
 })
 
+const singlesUrl = import.meta.env.VITE_SINGLES_URL
+
+const singlesBtnClick = () => {
+  window.open(`${singlesUrl}`)
+}
+
 const data = ref("")
 
 const getData = async () => {
@@ -35,7 +41,7 @@ await getData()
       <span class="" v-html="data.sub_text_one"></span>
 
       <div class="self-center" id="singlesPageButton">
-        <ButtonComponent button-text="Shop Singles" button-class="bg-blue-900 p-4"/>
+        <ButtonComponent button-text="Shop Singles" button-class="bg-blue-900 p-4" @click="singlesBtnClick" />
       </div>
 
     </div>
