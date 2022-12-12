@@ -61,7 +61,11 @@
 
 body {
   color: var(--color-text);
-  background: black;
+  background-image: url("/img/background-sm.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Exo2, sans-serif;
@@ -69,4 +73,24 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("/img/background-md.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url("/img/background-lg.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
