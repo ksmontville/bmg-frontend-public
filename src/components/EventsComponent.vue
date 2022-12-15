@@ -108,7 +108,7 @@ await getGoogleCalendarEvents()
     <FullCalendar class="min-h-fit" ref="fullCalendar" :options="calendarOptions"/>
 
     <ModalComponent class="z-10 text-black" :is-active="eventModalActive" :event-data="event" @close-modal="toggleEventModal" :mouse-x="mouseX" :mouse-y="mouseY">
-        <div class="z-10" id="eventModal">
+        <div class="z-10 text-black" id="eventModal">
           <ul class="flex flex-col items-center gap-8">
             <li>
               <h4>{{ event.title }}</h4>
