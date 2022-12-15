@@ -12,28 +12,22 @@ const apiHome = import.meta.env.VITE_API_HOME
 <template>
 
   <div class="wrapper min-h-screen flex flex-col">
-
     <nav class="">
-
     <Suspense>
       <Navbar :api-url=apiNav />
     </Suspense>
-
     </nav>
 
-  <main class="opacity-80">
+    <main class="opacity-80">
+      <Suspense>
+        <RouterView />
+      </Suspense>
+    </main>
 
-    <Suspense>
-      <RouterView />
-    </Suspense>
-
-  </main>
-
-  <footer class="mt-auto">
-    <Footer />
-  </footer>
+    <footer class="mt-auto">
+      <Footer />
+    </footer>
   </div>
-
 </template>
 
 <style scoped>
@@ -58,7 +52,29 @@ const apiHome = import.meta.env.VITE_API_HOME
   src: url("../public/fonts/KronaOne-Regular.ttf");
 }
 
+.fade-enter-from {
+  opacity: 0;
+}
 
+.fade-enter-active {
+  transition: opacity 0.8s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  transition: opacity 0.8s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
 
 
 @media (min-width: 1024px) {

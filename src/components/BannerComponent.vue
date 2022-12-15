@@ -19,7 +19,6 @@ await getData()
 </script>
 
 <template>
-
   <div v-if="data.banner_text" class="flex flex-col flex-nowrap justify-between items-center bg-blue-900 text-white text-center
     border-b-4 border-white gap-y-2 p-2">
 
@@ -30,11 +29,7 @@ await getData()
     <div v-if="data.image" class="banner-img">
         <img class="rounded-lg" :src="data.image.url" :height="data.image.height" :width="data.image.width" :alt="data.image.alt">
       </div>
-
   </div>
-
-
-
 </template>
 
 

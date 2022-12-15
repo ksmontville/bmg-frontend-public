@@ -27,13 +27,13 @@ await getData()
 
 <template>
 
-  <div class="flex flex-col min-h-full rounded-lg text-white p-4">
+  <div class="flex flex-col items-stretch min-h-full rounded-lg text-white p-4">
 
     <div class="bg-white mb-2" id="cardHeader">
       <h3 v-if="data.title" class="header text-black text-center p-4">{{ data.title }}</h3>
     </div>
 
-    <div class="flex flex-row flex-wrap justify-center items-center gap-8" id="newProductsCard">
+    <div class="flex flex-row flex-wrap justify-evenly gap-8" id="newProductsCard">
 
       <div v-for="product in data.new_products" :key="product.id" :id="product.value.image.thumbnail.alt" id="card">
 

@@ -28,12 +28,12 @@ await getData()
 
 <template>
 
-  <div class="flex flex-col justify-center items-center gap-16 text-white p-8" id="singlesPageWrapper">
+  <div class="flex flex-row flex-wrap gap-16 text-white p-8" id="singlesPageWrapper">
 
     <div class="flex flex-col gap-12">
 
       <div id="singlesHeader">
-        <h2 v-html="data.header"></h2>
+        <span v-html="data.header"></span>
       </div>
 
       <span v-html="data.text"></span>
@@ -46,7 +46,7 @@ await getData()
 
     </div>
 
-    <div class="flex flex-col justify-center items-center gap-8" id="singlesPageTCGs">
+    <div class="flex-1 flex flex-col gap-8" id="singlesPageTCGs">
       <div id="singlesPageSubTextTwo">
         <span v-html="data.sub_text_two"></span>
       </div>

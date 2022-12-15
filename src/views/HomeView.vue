@@ -5,6 +5,7 @@ import Button from "../components/ButtonComponent.vue"
 import BannerComponent from "../components/BannerComponent.vue"
 import SinglesView from "./SinglesView.vue"
 import NewProductView from "./NewProductView.vue"
+import WhatsNewView from "./WhatsNewView.vue"
 
 const homeUrl = import.meta.env.VITE_API_HOME
 const shopUrl = import.meta.env.VITE_SHOP_URL
@@ -22,6 +23,7 @@ const getData = async () => {
   const response = await axios.get(homeUrl)
   console.log(response.data)
   data.value = response.data
+  console.log(data.value)
 }
 
 await getData()
@@ -55,20 +57,22 @@ await getData()
         <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
       </div>
 
-<!--      <div v-if="data.hero_image" class="opacity-80" id="heroImage">-->
-<!--              <img class="bg-white border-4 border-blue-900" :src="data.hero_image.meta.download_url"-->
-<!--                   :height="data.hero_image.height" :width="data.hero_image.width" :alt="data.hero_image.alt">-->
-<!--      </div>-->
+    </div>
+
+    <div class="flex-1" id="whatsNewView">
+      <WhatsNewView :main-text="data.whats_new_header" :sub-text="data.whats_new_text" :image-src="data.hero_image.meta.download_url"
+                    :image-alt="data.hero_image_description" :image-height="data.hero_image.height" :image-width="data.hero_image.height"/>
+    </div>
+
+    <div class="" id="newProductsVIew">
+      <NewProductView :api-url=apiProducts />
     </div>
 
     <div class="" id="magicSinglesView">
       <SinglesView :api-url=apiSingles />
     </div>
 
-    <div class="" id="newProductsVIew">
-      <NewProductView :api-url=apiProducts />
     </div>
-  </div>
 
 
 

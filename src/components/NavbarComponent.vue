@@ -80,4 +80,32 @@ await getLogo()
 
 <style scoped>
 
+.slide-enter-from {
+  height: 0;
+  opacity: 0;
+}
+.slide-enter-to {
+  height: 268px;
+  opacity: 1;
+}
+.slide-enter-active {
+  overflow: hidden;
+  transition: all 500ms cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
+.slide-leave-from {
+  overflow: hidden;
+  height: 268px;
+  opacity: 1;
+}
+
+.slide-leave-to {
+  height: 0;
+  opacity: 0;
+}
+
+.slide-leave-active {
+  transition: all 500ms cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
 </style>
