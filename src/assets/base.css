@@ -60,13 +60,11 @@
 }
 
 body {
-  color: var(--color-text);
   background-image: url("/img/solid_black_sm.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Exo2, sans-serif;
   font-size: 16px;

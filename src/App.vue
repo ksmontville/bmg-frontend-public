@@ -1,11 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
 
-const apiURLDev = "http://localhost:8000/api/v2/pages"
-const apiURLProd = "https://blackmoongames-dev.herokuapp.com/api/v2/pages"
-
 const apiNav = import.meta.env.VITE_API_NAV
-const apiHome = import.meta.env.VITE_API_HOME
 
 </script>
 
