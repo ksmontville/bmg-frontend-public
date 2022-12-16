@@ -15,6 +15,11 @@ import EventsComponent from "../components/EventsComponent.vue"
     <Transition name="fade">
       <Suspense>
         <EventsComponent />
+        <template #fallback>
+          <div class="text-center text-6xl text-white">
+            Fetching event data, please wait...
+          </div>
+        </template>
       </Suspense>
     </Transition>
   </div>

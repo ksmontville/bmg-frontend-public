@@ -11,12 +11,22 @@ const apiNav = import.meta.env.VITE_API_NAV
     <nav class="">
     <Suspense>
       <Navbar :api-url=apiNav />
+      <template #fallback>
+        <div class="text-center text-3xl text-white">
+          Fetching navbar data, please wait...
+        </div>
+      </template>
     </Suspense>
     </nav>
 
     <main class="opacity-80">
       <Suspense>
         <RouterView />
+        <template #fallback>
+          <div>
+            Looks like you're the first visitor of the day! Please wait while we fetch the necessary data...
+          </div>
+        </template>
       </Suspense>
     </main>
 
@@ -47,31 +57,6 @@ const apiNav = import.meta.env.VITE_API_NAV
   font-family: "KroneOne";
   src: url("../public/fonts/KronaOne-Regular.ttf");
 }
-
-.fade-enter-from {
-  opacity: 0;
-}
-
-.fade-enter-active {
-  transition: opacity 0.8s cubic-bezier(0.52, 0.02, 0.19, 1.02);
-}
-
-.fade-enter-to {
-  opacity: 1;
-}
-
-.fade-leave-from {
-  opacity: 1;
-}
-
-.fade-leave-active {
-  transition: opacity 0.8s cubic-bezier(0.52, 0.02, 0.19, 1.02);
-}
-
-.fade-leave-to {
-  opacity: 0;
-}
-
 
 @media (min-width: 1024px) {
 

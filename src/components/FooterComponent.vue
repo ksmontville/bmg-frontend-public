@@ -1,5 +1,15 @@
 <script setup>
 
+const openFacebook = () => {
+  window.open('https://www.facebook.com/blackmoonnh')
+}
+const openDiscord = () => {
+  window.open('https://discord.com/invite/QeTfZXt')
+}
+const openTwitter = () => {
+  window.open('https://twitter.com/blackmoongamenh?lang=en')
+}
+
 </script>
 
 <template>
@@ -8,13 +18,19 @@
   <div class="rounded-b-lg opacity-85 flex flex-col justify-center items-center p-8 gap-6 mt-auto bg-white text-black">
 
     <div class="social-media-icons flex flex-row flex-nowrap justify-center items-center gap-6">
-      <font-awesome-icon icon="fa-brands fa-facebook" size="2x" color="#1e3a8a" />
-      <font-awesome-icon icon="fa-brands fa-discord" size="2x" color="#818cf8"/>
-      <font-awesome-icon icon="fa-brands fa-twitter" size="2x" color="#38bdf8"/>
+      <button class="focus:rounded-full focus:border-2 focus:border-blue-400">
+        <font-awesome-icon class="rounded-full hover:p-1 hover:border-2 border-blue-400"
+                           icon="fa-brands fa-facebook" size="2x" color="#1e3a8a" @click="openFacebook" /></button>
+      <button class="focus:rounded-full focus:border-2 focus:border-blue-400">
+        <font-awesome-icon class="rounded-full hover:p-1 hover:border-2 border-blue-400"
+                           icon="fa-brands fa-discord" size="2x" color="#818cf8" @click="openDiscord" /></button>
+      <button class="focus:rounded-full focus:border-2 focus:border-blue-400">
+        <font-awesome-icon class="rounded-full hover:p-1 hover:border-2 border-blue-400"
+                           icon="fa-brands fa-twitter" size="2x" color="#38bdf8" @click="openTwitter" /></button>
     </div>
 
     <div class="btn-newsletter">
-      <Button button-text="Join Our Newsletter" button-class="bg-blue-900 border-black text-white p-2"/>
+      <Button button-text="Join Our Newsletter" button-class="line-through bg-blue-900 border-black text-white p-2"/>
     </div>
 
     <div class="flex flex-col justify-center items-center p-2 gap-2 copyright text-xs text-zinc-300">

@@ -35,6 +35,11 @@ await getData()
 
   <Suspense>
     <BannerComponent :api-url=apiBanner />
+    <template #fallback>
+        <div class="text-center text-3xl text-white">
+          Fetching banner data, please wait...
+        </div>
+      </template>
   </Suspense>
 
   <div class="flex flex-row flex-wrap justify-center items-baseline gap-x-16 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
@@ -60,16 +65,42 @@ await getData()
     </div>
 
     <div class="flex-1" id="whatsNewView">
-      <WhatsNewView :main-text="data.whats_new_header" :sub-text="data.whats_new_text" :image-src="data.hero_image.meta.download_url"
-                    :image-alt="data.hero_image_description" :image-height="data.hero_image.height" :image-width="data.hero_image.height"/>
+      <Suspense>
+        <WhatsNewView :main-text="data.whats_new_header" :sub-text="data.whats_new_text" :image-src="data.hero_image.meta.download_url"
+                      :image-alt="data.hero_image_description" :image-height="data.hero_image.height" :image-width="data.hero_image.height"/>
+
+        <template #fallback>
+          <div class="text-center text-3xl text-white">
+            Fetching announcements data, please wait...
+          </div>
+        </template>
+      </Suspense>
     </div>
 
     <div class="" id="newProductsVIew">
-      <NewProductView :api-url=apiProducts />
+      <Suspense>
+        <NewProductView :api-url=apiProducts />
+
+        <template #fallback>
+          <div class="text-center text-3xl text-white">
+            Fetching product data, please wait...
+          </div>
+        </template>
+      </Suspense>
+
+
     </div>
 
     <div class="" id="magicSinglesView">
-      <SinglesView :api-url=apiSingles />
+      <Suspense>
+        <SinglesView :api-url=apiSingles />
+
+        <template #fallback>
+          <div class="text-center text-3xl text-white">
+          Fetching data, please wait...
+        </div>
+      </template>
+      </Suspense>
     </div>
 
     </div>

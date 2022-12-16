@@ -11,7 +11,8 @@ const props = defineProps({
 
 <template>
   <div class="btn">
-    <button class="flex flex-row-reverse flex-nowrap justify-between items-center rounded-full p-4 font-bold border-2 gap-x-2"
+    <button class="flex flex-row-reverse flex-nowrap justify-between items-center rounded-full p-4 font-bold border-2
+                  gap-x-2 focus:border-4 focus:border-blue-400 hover:border-blue-400"
             :class="[props.buttonClass]"
             type="button" :value=props.buttonText>{{ props.buttonText }}
       <label class="">

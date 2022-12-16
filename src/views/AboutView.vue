@@ -1,11 +1,22 @@
 <script setup>
-import ButtonComponent from "../components/ButtonComponent.vue";
 import {ref} from "vue";
 import axios from "axios";
+import ButtonComponent from "../components/ButtonComponent.vue";
+import ModalComponent from "../components/ModalComponent.vue";
 
 const aboutURL = import.meta.env.VITE_API_ABOUT
 
 const data = ref("")
+const showContactForm = ref(false)
+const showModal = ref(null)
+
+const mouseX = ref(0)
+const mouseY = ref(0)
+
+const getMouseCoords = (event) => {
+  mouseX.value = event.clientX
+  mouseY.value = event.clientY
+}
 
 const getData = async () => {
   const response = await axios.get(aboutURL)
@@ -14,13 +25,21 @@ const getData = async () => {
   console.log(data.value)
 }
 
+const toggleContactForm = () => {
+  showContactForm.value = !showContactForm.value
+}
+
+const toggleShowModal = () => {
+  showModal.value = !showModal.value
+}
+
 await getData()
 </script>
 
 
 <template>
 
-  <div class="flex flex-col" id="about-wrapper">
+  <div class="flex flex-col" id="about-wrapper" @click="getMouseCoords">
 
     <div class="flex flex-col text-white gap-4" id="top">
 
@@ -28,20 +47,24 @@ await getData()
         <span v-html="data.page_header" class="text-center"></span>
       </div>
 
-      <div class="flex flex-col bg-white text-black text-xl pt-8 pb-8" id="mid">
-        <div class="flex flex-row flex-wrap items-start justify-evenly">
-         <div class="flex flex-col items-center p-4" id="contact">
+      <div class="flex flex-row flex-wrap justify-evenly bg-white text-black text-xl pt-8 pb-8" id="mid">
+        <div class="flex flex-row flex-wrap justify-center">
+         <div class="flex flex-col items-center gap-8 p-4" id="contact">
             <span v-html="data.location" class="text-center"></span>
-            <ButtonComponent button-text="Contact" button-class="bg-blue-900 text-white p-4 m-8" />
+            <ButtonComponent button-text="Contact" button-class="bg-blue-900 text-white p-4 m-8" @click="toggleContactForm"/>
+            <Transition name="contact">
+              <ContactForm v-if="showContactForm" class="mb-12"/>
+            </Transition>
+
          </div>
-
-          <span v-html="data.hours" class="text-center p-4" id="hours"></span>
-
         </div>
 
-        <div class="flex flex-col items-center mt-16 mb-8" id="google-map">
-          <p class="text-3xl"><strong>Find us here!</strong></p>
-          <iframe :src="data.map_widget_url" width="400" height="300" style="padding: 1.2rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="flex flex-col items-center gap-24" id="google-map">
+          <span v-html="data.hours" class="text-center p-4" id="hours"></span>
+          <div>
+            <p class="text-3xl text-center"><strong>Find us here!</strong></p>
+            <iframe :src="data.map_widget_url" width="400" height="300" style="padding: 1.2rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
 
@@ -69,5 +92,4 @@ await getData()
 #header {
   font-family: Montserrat, sans-serif;
 }
-
 </style>

@@ -17,12 +17,11 @@ const props = defineProps({
   }
 })
 
-const mousePosX = String(props.mouseX)
-const mousePosY = String(props.mouseY)
 
 defineEmits(['closeModal'])
 
 const isMobile = ref(null)
+const showContent = ref(false)
 const pos = "absolute"
 
 onMounted(() => {
@@ -35,34 +34,34 @@ onMounted(() => {
 
 <template>
   <Teleport to="body">
-    <Transition name="modal-outer">
+
+    <Transition name="modal-outer" @after-enter="showContent=true" @after-leave="showContent=false">
       <div v-if="isActive && !isMobile" :style="{position: pos, top: String(props.mouseY) + 'px', left: String(props.mouseX) + 'px'}"
-           :class="{modalWrapperMobile: isMobile}" class="rounded-lg overflow-y-scroll bg-white bg-op-30 h-96 max-w-screen-md" id="modalWrapper">
+           :class="{modalWrapperMobile: isMobile}" class="rounded-lg overflow-y-scroll bg-white bg-op-30 max-h-96 max-w-screen-md">
+
         <Transition name="modal-inner">
-          <div v-if="isActive" class="p-8" id="modalContent">
-
+          <div v-if="showContent" class="p-8">
             <slot />
-
             <button class="text-white bg-black rounded-lg mt-24 py-2 px-6" type="submit" @click="$emit('closeModal')">Close</button>
-
           </div>
         </Transition>
+
       </div>
-
-      <div v-else :class="{modalWrapperMobile: isMobile}" class="rounded-lg overflow-y-scroll bg-white bg-op-30 max-h-72 max-w-screen-md">
-        <Transition name="modal-inner">
-          <div v-if="isActive" class="p-8" id="modalContent">
-
-            <slot />
-
-            <button class="text-white bg-black rounded-lg mt-24 py-2 px-6" type="submit" @click="$emit('closeModal')">Close</button>
-
-          </div>
-        </Transition>
-      </div>
-
-
     </Transition>
+
+    <Transition name="modal-outer" @after-enter="showContent=true" @after-leave="showContent=false">
+      <div v-if="isActive && isMobile" :class="{modalWrapperMobile: isMobile}" class="rounded-lg overflow-y-scroll bg-white bg-op-30 max-h-96 max-w-screen-md">
+
+        <Transition name="modal-inner">
+          <div v-if="showContent" class="p-8">
+            <slot />
+            <button class="text-white bg-black rounded-lg mt-24 py-2 px-6" type="submit" @click="$emit('closeModal')">Close</button>
+          </div>
+        </Transition>
+
+      </div>
+    </Transition>
+
   </Teleport>
 
 </template>
@@ -78,7 +77,7 @@ onMounted(() => {
 }
 
 .modal-outer-enter-active, .modal-outer-leave-active {
-  transition: opacity 0.30s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+  transition: all 0.30s cubic-bezier(0.52, 0.02, 0.19, 1.02);
 }
 
 .modal-outer-enter-from, .modal-outer-leave-to {
@@ -86,7 +85,7 @@ onMounted(() => {
 }
 
 .modal-inner-enter-active {
-  transition: all 0.30s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+  transition: all 0.30s cubic-bezier(0.52, 0.02, 0.19, 1.02);
 }
 
 .modal-inner-leave-active {
@@ -94,12 +93,21 @@ onMounted(() => {
 }
 
 .modal-inner-enter-from {
+  transform: scale(0.8);
+}
+
+.modal-inner-enter-to {
+  transform: scale(1.0);
+}
+
+.modal-inner-leave-to {
   opacity: 0;
   transform: scale(0.8);
 }
 
-.modal-inner-leave-to {
-  transform: scale(0.8);
+.modal-inner-leave-from {
+  opacity: 1;
+  transform: scale(1.0);
 }
 
 </style>

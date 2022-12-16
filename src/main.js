@@ -14,6 +14,8 @@ import FooterComponent from "./components/FooterComponent.vue"
 import ButtonComponent from "./components/ButtonComponent.vue"
 import BannerComponent from "./components/BannerComponent.vue"
 import EventsComponent from "./components/EventsComponent.vue"
+import ModalComponent from "./components/ModalComponent.vue"
+import ContactFormComponent from "./components/ContactFormComponent.vue"
 
 library.add(faFacebook, faDiscord, faTwitter)
 
@@ -27,4 +29,6 @@ app
     .component("Button", ButtonComponent)
     .component("Banner", BannerComponent)
     .component("Events", EventsComponent)
+    .component('Modal', ModalComponent)
+    .component('ContactForm', ContactFormComponent)
     .mount("#app")
