@@ -16,7 +16,7 @@ import EventsComponent from "../components/EventsComponent.vue"
       <Suspense>
         <EventsComponent />
         <template #fallback>
-          <div class="text-center text-6xl text-white">
+          <div class="text-center text-xl text-white">
             Fetching event data, please wait...
           </div>
         </template>

@@ -12,8 +12,8 @@ const apiNav = import.meta.env.VITE_API_NAV
     <Suspense>
       <Navbar :api-url=apiNav />
       <template #fallback>
-        <div class="text-center text-3xl text-white">
-          Fetching navbar data, please wait...
+        <div class="text-center text-xl text-white">
+          Loading, please wait...
         </div>
       </template>
     </Suspense>
