@@ -44,7 +44,7 @@ await getData()
 
   <div class="flex flex-row flex-wrap justify-center items-baseline gap-x-16 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
 
-    <div class="flex flex-col p-8 items-start gap-8 text-white" id="hero">
+    <div class="flex flex-col p-8 gap-8 text-white" id="hero">
 
       <div class="" id="heroText">
         <span v-html="data.hero_text" class=""></span>
@@ -77,7 +77,7 @@ await getData()
       </Suspense>
     </div>
 
-    <div class="" id="newProductsVIew">
+    <div class="max-w-sm md:max-w-screen-md lg:max-w-screen-xl" id="newProductsView">
       <Suspense>
         <NewProductView :api-url=apiProducts />
 
@@ -87,7 +87,6 @@ await getData()
           </div>
         </template>
       </Suspense>
-
 
     </div>
 
@@ -113,6 +112,10 @@ await getData()
 
 #heroText {
   font-family: Montserrat, sans-serif;
+}
+
+#newProductsView {
+
 }
 
 </style>

@@ -16,6 +16,7 @@ import BannerComponent from "./components/BannerComponent.vue"
 import EventsComponent from "./components/EventsComponent.vue"
 import ModalComponent from "./components/ModalComponent.vue"
 import ContactFormComponent from "./components/ContactFormComponent.vue"
+import CarouselComponent from "./components/CarouselComponent.vue"
 
 library.add(faFacebook, faDiscord, faTwitter)
 
@@ -31,4 +32,5 @@ app
     .component("Events", EventsComponent)
     .component('Modal', ModalComponent)
     .component('ContactForm', ContactFormComponent)
+    .component('ProductCarousel', CarouselComponent)
     .mount("#app")
