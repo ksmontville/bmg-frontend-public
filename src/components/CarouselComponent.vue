@@ -18,11 +18,6 @@ const breakpoints = {
         itemsToShow: 2,
         snapAlign: 'center',
       },
-      // // 1024 and up
-      // 1024: {
-      //   itemsToShow: 4,
-      //   snapAlign: 'start',
-      // },
 }
 
 const btnClick = (url) => {

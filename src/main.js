@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { } from "@fortawesome/free-solid-svg-icons"
 import { faFacebook, faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
-
 import NavbarComponent from "./components/NavbarComponent.vue"
 import FooterComponent from "./components/FooterComponent.vue"
 import ButtonComponent from "./components/ButtonComponent.vue"

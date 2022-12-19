@@ -1,5 +1,5 @@
 <script setup>
-import {defineProps, ref} from "vue";
+import {defineProps, onMounted, onUnmounted, ref, watch} from "vue";
 import axios from "axios";
 
 const props = defineProps({
@@ -11,21 +11,29 @@ const singlesUrl = import.meta.env.VITE_SINGLES_URL
 
 const data = ref("")
 const isHidden = ref(true)
+const windowWidth = ref(null)
 const isDesktop = ref(window.innerWidth >= 768)
 
-function toggleNav() {
-isHidden.value = !isHidden.value
+const toggleNav = () => {
+  isHidden.value = !isHidden.value
 }
+
+const onWidthChange = () => windowWidth.value = window.innerWidth
+  onMounted(() => window.addEventListener('resize', onWidthChange))
+  onUnmounted(() => window.removeEventListener('resize', onWidthChange))
 
 const getLogo = async () => {
   const response = await axios.get(props.apiUrl)
   data.value = response.data
 }
 
+watch(windowWidth, () => {
+  windowWidth.value = window.innerWidth
+  isDesktop.value = windowWidth.value >= 768;
+})
+
 await getLogo()
-
 </script>
-
 
 <template>
   <div class="opacity-85 bg-white text-blue-900 rounded-t-lg" :class="isDesktop ? 'flex flex-row justify-between items-center' : '' " id="navbar">

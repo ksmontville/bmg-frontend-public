@@ -11,16 +11,11 @@ const slides = ref([])
 
 const getData = async () => {
   const response = await axios.get(props.apiUrl)
-  console.log(response.data)
   data.value = response.data
-  console.log(data.value.new_products.length)
 
   for(let i=0; i < data.value.new_products.length; i++) {
-    console.log(data.value.new_products[i])
     slides.value.push(data.value.new_products[i])
   }
-
-  console.log(slides.value)
 
 }
 

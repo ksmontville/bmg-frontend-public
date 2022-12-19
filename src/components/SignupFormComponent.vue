@@ -1,7 +1,7 @@
 <script setup>
 import {onMounted} from "vue";
 
-const props = defineProps({
+defineProps({
   isOpen: Boolean,
 })
 
@@ -59,7 +59,6 @@ onMounted( () => {
     </form>
 </div>
 <!--End Mailchimp Signup Form-->
-
 </template>
 
 <style scoped>

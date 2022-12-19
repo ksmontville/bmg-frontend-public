@@ -21,9 +21,7 @@ const data = ref("")
 
 const getData = async () => {
   const response = await axios.get(homeUrl)
-  console.log(response.data)
   data.value = response.data
-  console.log(data.value)
 }
 
 await getData()
@@ -77,7 +75,7 @@ await getData()
       </Suspense>
     </div>
 
-    <div class="max-w-sm md:max-w-screen-md lg:max-w-screen-xl" id="newProductsView">
+    <div class="max-w-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl" id="newProductsView">
       <Suspense>
         <NewProductView :api-url=apiProducts />
 

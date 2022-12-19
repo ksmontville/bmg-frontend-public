@@ -93,6 +93,12 @@
   }
 }
 
+@media (max-width: 280px) {
+  #app {
+
+  }
+}
+
 @media (min-width: 768px) {
   #app {
   margin: 0 auto;

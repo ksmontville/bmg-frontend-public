@@ -37,11 +37,11 @@ const openTwitter = () => {
 
     <Button button-text="Join Our Newsletter" button-class="bg-blue-900 border-black text-white p-2" @click="toggleSignupForm"/>
 
+  <Transition name="contact">
     <div v-if="isOpen" id="signupForm">
-
       <SignupForm />
-
     </div>
+    </Transition>
 
     <div class="flex flex-col justify-center items-center p-2 gap-2 copyright text-xs text-zinc-300">
       <p>Black Moon Games, &copy; 2022-2023</p>

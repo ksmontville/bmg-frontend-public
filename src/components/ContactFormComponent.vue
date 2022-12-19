@@ -41,7 +41,7 @@ const sendEmail = ()=> {
           type="text"
           v-model="name"
           name="name"
-          placeholder="Your Name"
+          placeholder=" Your Name"
           required
         >
       </div>
@@ -52,7 +52,7 @@ const sendEmail = ()=> {
         type="email"
         v-model="email"
         name="email"
-        placeholder="Your Email"
+        placeholder=" Your Email"
         required
         >
       </div>
@@ -60,7 +60,7 @@ const sendEmail = ()=> {
         name="message"
         v-model="message"
         cols="30" rows="5"
-        placeholder="Message"
+        placeholder=" Message"
         required
         >
 

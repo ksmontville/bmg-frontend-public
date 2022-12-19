@@ -10,7 +10,6 @@ const data = ref("")
 
 const getData = async () => {
   const response = await axios.get(props.apiUrl)
-  console.log(response.data)
   data.value = response.data
 }
 
