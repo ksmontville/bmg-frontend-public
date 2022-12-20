@@ -49,9 +49,16 @@ await getLogo()
       </div>
 
       <div v-if="!isDesktop" class="flex flex-col flex-nowrap" @click="toggleNav" id="navbarToggle">
-        <span class="bar bg-black block w-6 h-1 mx-auto my-1"></span>
-        <span class="bar bg-black block w-6 h-1 mx-auto my-1"></span>
-        <span class="bar bg-black block w-6 h-1 mx-auto my-1"></span>
+          <div v-if="!isHidden" id="x-icon">
+            <span class="bar-after-top bg-black block w-6 h-1 mx-auto my-1"></span>
+            <span class="bar-after-bot bg-black block w-6 h-1 mx-auto my-1"></span>
+          </div>
+
+          <div v-else id="hamburger">
+            <span class="bar bg-black block w-6 h-1 mx-auto my-1"></span>
+            <span class="bar bg-black block w-6 h-1 mx-auto my-1"></span>
+            <span class="bar bg-black block w-6 h-1 mx-auto my-1"></span>
+          </div>
       </div>
     </div>
 
@@ -87,6 +94,14 @@ await getLogo()
 
 
 <style scoped>
+
+.bar-after-top {
+  transform: rotate(45deg);
+}
+
+.bar-after-bot {
+  transform: rotate(-45deg) translate(25%, -125%);
+}
 
 .slide-enter-from {
   height: 0;

@@ -8,7 +8,6 @@ const aboutURL = import.meta.env.VITE_API_ABOUT
 
 const data = ref("")
 const showContactForm = ref(false)
-const showModal = ref(null)
 
 const mouseX = ref(0)
 const mouseY = ref(0)
@@ -29,8 +28,13 @@ const toggleContactForm = () => {
   showContactForm.value = !showContactForm.value
 }
 
-const toggleShowModal = () => {
-  showModal.value = !showModal.value
+const getBtnText = () => {
+  if(showContactForm.value === true) {
+    return "Close Form"
+  }
+  else {
+    return "Contact Us"
+  }
 }
 
 await getData()
@@ -51,7 +55,7 @@ await getData()
         <div class="flex flex-row flex-wrap justify-center">
          <div class="flex flex-col items-center gap-8 p-4" id="contact">
             <span v-html="data.location" class="text-center"></span>
-            <ButtonComponent button-text="Contact" button-class="bg-blue-900 text-white p-4 m-8" @click="toggleContactForm"/>
+            <ButtonComponent :button-text="getBtnText()" button-class="bg-blue-900 text-white p-4 m-8" @click="toggleContactForm"/>
             <Transition name="contact">
               <ContactForm v-if="showContactForm" class="mb-12"/>
             </Transition>

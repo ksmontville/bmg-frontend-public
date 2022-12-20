@@ -32,7 +32,7 @@ const btnClick = (url) => {
   <Carousel :wrap-around="true" :breakpoints="breakpoints" :settings="settings">
 
     <Slide v-for="slide in props.slides" :key="slide.id">
-      <div class="" id="card">
+      <div class="w-full ml-0 mr-0 md:ml-4 md:mr-4" id="card">
 
         <div class="bg-blue-900 rounded-t-md text-center text-white p-4" id="cardTitle">
           <h4 v-html="slide.value.name"></h4>
@@ -40,15 +40,15 @@ const btnClick = (url) => {
 
         <div class="rounded-b-md bg-white text-black flex flex-row gap-8 p-8" id="cardBody">
 
-          <div class="flex flex-col gap-8" id="cardBodyLeft">
-            <img class="rounded-md border-4 border-black" :src="slide.value.image.thumbnail.src" :alt="slide.value.alt" id="cardImage">
+          <div class="flex flex-col items-stretch gap-8" id="cardBodyLeft">
+            <img class="rounded-md border-4 border-black w-fit" :src="slide.value.image.thumbnail.src" :alt="slide.value.alt" id="cardImage">
               <div class="text-center" id="cardButton">
-                <Button button-text="Buy Now" button-class="text-md text-white border-2 border-black bg-blue-900" @click="btnClick(slide.value.link)" />
+                <Button button-text="Buy" button-class="w-3/4 text-md text-white border-2 border-black bg-blue-900" @click="btnClick(slide.value.link)" />
               </div>
           </div>
 
           <div class="" id="cardBodyRight">
-            <p class="text-md" v-html="slide.value.description"></p>
+            <p v-html="slide.value.description"></p>
           </div>
         </div>
 
