@@ -1,9 +1,15 @@
 <script setup>
-import {onMounted} from "vue";
+import {onMounted, ref} from "vue";
 
 defineProps({
   isOpen: Boolean,
 })
+
+const subscribeClicked = ref(null)
+
+const toggleSubscribeClicked = () => {
+  subscribeClicked.value = true
+}
 
 onMounted( () => {
   const scriptValidation = document.createElement("script-validation");
@@ -18,7 +24,7 @@ onMounted( () => {
     <form action="https://black-moon-games.us8.list-manage.com/subscribe/post?u=485bc53f6d181be0d5c63d487&amp;id=f9590c1844&amp;f_id=00e06ae0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 
       <div class="m-4" id="mc_embed_signup_scroll">
-        <h4 class="text-center">Sign up for Black Moon Games Weekly!</h4>
+        <h4 class="text-center mb-4">Sign up for Black Moon Games Weekly!</h4>
         <h6 class="text-center mb-4">Stay updated with a weekly newsletter of events, promotions and new releases.</h6>
         <div class="text-center m-4 indicates-required font-bold"><span class="asterisk">*</span> indicates required</div>
 
@@ -50,13 +56,19 @@ onMounted( () => {
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_485bc53f6d181be0d5c63d487_f9590c1844" tabindex="-1" value=""></div>
-        <div class="optionalParent">
+        <div class="flex flex-row justify-center items-baseline gap-8 optionalParent">
           <div class="bg-white rounded-lg md:w-1/3 text-center mt-6 font-bold hover:border-2 hover:border-blue-400 clear foot">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button p-2">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="p-2" @click="toggleSubscribeClicked">
           </div>
         </div>
       </div>
     </form>
+  <Transition name="contact">
+    <div v-if="subscribeClicked" class="flex flex-col gap-4 bg-white text-black text-xl p-4 rounded-md mt-8">
+      <p>Thank you for subscribing to the <strong>Black Moon Games</strong> newsletter.</p>
+      <p>Check your email for the latest announcements, product releases, and event schedules!</p>
+    </div>
+  </Transition>
 </div>
 <!--End Mailchimp Signup Form-->
 </template>

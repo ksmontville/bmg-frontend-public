@@ -7,6 +7,15 @@ const toggleSignupForm = () => {
   isOpen.value = !isOpen.value
 }
 
+const getBtnText = () => {
+  if(isOpen.value === true) {
+    return "Close Signup Form"
+  }
+  else {
+    return "Join Our Newsletter!"
+  }
+}
+
 const openFacebook = () => {
   window.open('https://www.facebook.com/blackmoonnh')
 }
@@ -35,11 +44,11 @@ const openTwitter = () => {
                            icon="fa-brands fa-twitter" size="2x" color="#38bdf8" @click="openTwitter" /></button>
     </div>
 
-    <Button button-text="Join Our Newsletter" button-class="bg-blue-900 border-black text-white p-2" @click="toggleSignupForm"/>
+    <Button :button-text="getBtnText()" button-class="bg-blue-900 border-black text-white p-2" @click="toggleSignupForm"/>
 
   <Transition name="contact">
     <div v-if="isOpen" id="signupForm">
-      <SignupForm />
+      <SignupForm :is-open="isOpen"/>
     </div>
     </Transition>
 
