@@ -115,8 +115,8 @@ await getGoogleCalendarEvents()
             <li>
               <h5>@ {{ event.location }}</h5>
             </li>
-            <li class="text-lg">
-              {{ event.description }}
+            <li>
+              <span v-html="event.description"></span>
             </li>
             <li class="flex flex-col items-center gap-2 mb-4">
               <strong>Start: {{ event.start_time.slice(0, -3) }}, {{ event.start_date }}</strong>
