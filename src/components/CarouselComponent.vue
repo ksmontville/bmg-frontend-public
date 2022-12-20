@@ -43,7 +43,7 @@ const btnClick = (url) => {
           <div class="flex flex-col items-stretch gap-8" id="cardBodyLeft">
             <img class="rounded-md border-4 border-black w-fit" :src="slide.value.image.thumbnail.src" :alt="slide.value.alt" id="cardImage">
               <div class="text-center" id="cardButton">
-                <Button button-text="Buy" button-class="w-3/4 text-md text-white border-2 border-black bg-blue-900" @click="btnClick(slide.value.link)" />
+                <Button button-text="Buy" button-class="w-3/4 text-md text-white border-2 border-black bg-blue-900 pr-8" @click="btnClick(slide.value.link)" />
               </div>
           </div>
 
