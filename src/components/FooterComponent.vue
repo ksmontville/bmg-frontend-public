@@ -54,8 +54,8 @@ const openTwitter = () => {
 
     <div class="flex flex-col justify-center items-center p-2 gap-2 copyright text-xs text-zinc-300">
       <p>Black Moon Games, &copy; 2022-2023</p>
-      <p>Photo by <a href="https://unsplash.com/@jogaway?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Jonathan Greenaway</a>
-        on <a href="https://unsplash.com/s/photos/dice-falling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+<!--      <p>Photo by <a href="https://unsplash.com/@jogaway?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Jonathan Greenaway</a>-->
+<!--        on <a href="https://unsplash.com/s/photos/dice-falling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>-->
     </div>
 
   </div>
