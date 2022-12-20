@@ -27,7 +27,7 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  background-image: url("/img/background-sm.jpg");
+  background-image: url("/img/solid_black_sm.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -104,7 +104,7 @@
   margin: 0 auto;
   /*padding: 0 2rem;*/
   font-weight: normal;
-  background-image: url("/img/background-md.jpg");
+  background-image: url("/img/solid_black_md.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -118,7 +118,7 @@
     margin: 0 auto;
     /*padding: 0 2rem;*/
     font-weight: normal;
-    background-image: url("/img/background-lg.jpg");
+    background-image: url("/img/solid_black_lg.jpg");
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -127,15 +127,15 @@
   }
 }
 
-  @media (min-width: 2160px) {
-    #app {
-      margin: 0 auto;
-      /*padding: 0 2rem;*/
-      font-weight: normal;
-      background-image: url("/img/background-xl.jpg");
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
+  /*@media (min-width: 2160px) {*/
+  /*  #app {*/
+  /*    margin: 0 auto;*/
+  /*    !*padding: 0 2rem;*!*/
+  /*    font-weight: normal;*/
+  /*    background-image: url("/img/background-xl.jpg");*/
+  /*    background-position: center;*/
+  /*    background-attachment: fixed;*/
+  /*    background-repeat: no-repeat;*/
+  /*    background-size: cover;*/
+  /*  }*/
+  /*}*/
