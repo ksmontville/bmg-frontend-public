@@ -10,7 +10,7 @@ import googleCalendarPlugin from "@fullcalendar/google-calendar"
 
 const apiUrl = import.meta.env.VITE_API_URL
 const eventsUrl = import.meta.env.VITE_API_EVENTS
-const calendarLink = ref('')
+const calendarLinkId = ref('')
 const fullCalendar = ref(null)
 
 const eventModalActive = ref(null)
@@ -20,7 +20,6 @@ const data = reactive([])
 const event = ref(null)
 const events = reactive([])
 const googleCalendarEvents = reactive([])
-const selectedDate = ref('')
 
 const mouseX = ref(0)
 const mouseY = ref(0)
@@ -51,8 +50,8 @@ const openStoreLink = (url) => {
   window.open(url)
 }
 
-const addToCalendar = (googleCalendarUrl) => {
-  window.open(googleCalendarUrl)
+const addToCalendar = (eventId) => {
+  window.open(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com`)
 }
 const toggleEventModal  = () => {
   eventModalActive.value = !eventModalActive.value
@@ -66,8 +65,9 @@ const handleEventClick = (eventClickInfo) => {
   eventClickInfo.jsEvent.preventDefault()
   for(let i=0; i < events.length; i++) {
     if(eventClickInfo.event.title === events[i].title) {
-      calendarLink.value = eventClickInfo.event.url
+      calendarLinkId.value = eventClickInfo.event.url.slice(42)
       event.value = events[i]
+      console.log(calendarLinkId.value)
     }
 
   }
@@ -123,24 +123,14 @@ await getGoogleCalendarEvents()
               <strong>End: {{ event.end_time.slice(0, -3) }}, {{ event.end_date}}</strong>
             </li>
             <li class="flex flex-row gap-4">
-              <button class="" @click="addToCalendar(calendarLink)">Add to calendar</button>
+              <button class="" @click="addToCalendar(calendarLinkId)">Add to calendar</button>
               <button class="" @click="openStoreLink(event.store_link)">Register</button>
             </li>
           </ul>
         </div>
     </ModalComponent>
   </div>
-
-<!--  <ModalComponent :is-active="eventsModalActive" :event-data="events" @close-modal="toggleEventsModal">-->
-<!--    <p>Events</p>-->
-<!--    <ul v-for="event in googleCalendarEvents[0]" :key="event.id">-->
-<!--      <li>{{ event.summary }}</li>-->
-<!--    </ul>-->
-<!--  </ModalComponent>-->
-
-
-
-
+  
 </template>
 
 
