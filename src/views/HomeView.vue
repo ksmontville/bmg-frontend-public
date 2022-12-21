@@ -22,6 +22,7 @@ const data = ref("")
 const getData = async () => {
   const response = await axios.get(homeUrl)
   data.value = response.data
+  console.log(data.value)
 }
 
 await getData()
@@ -65,7 +66,8 @@ await getData()
     <div class="flex-1" id="whatsNewView">
       <Suspense>
         <WhatsNewView :main-text="data.whats_new_header" :sub-text="data.whats_new_text" :image-src="data.hero_image.meta.download_url"
-                      :image-alt="data.hero_image_description" :image-height="data.hero_image.height" :image-width="data.hero_image.height"/>
+                      :image-alt="data.hero_image_description" :image-height="data.hero_image.height"
+                      :image-width="data.hero_image.height" :store-link="data.whats_new_link" :store-link-text="data.whats_new_link_text"/>
 
         <template #fallback>
           <div class="text-center text-3xl text-white">

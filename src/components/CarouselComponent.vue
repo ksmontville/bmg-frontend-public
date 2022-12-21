@@ -32,24 +32,26 @@ const btnClick = (url) => {
   <Carousel :wrap-around="true" :breakpoints="breakpoints" :settings="settings">
 
     <Slide v-for="slide in props.slides" :key="slide.id">
-      <div class="w-full ml-0 mr-0 md:ml-4 md:mr-4" id="card">
+      <div class="flex flex-col items-stretch w-full min-h-full ml-0 mr-0 md:ml-4 md:mr-4" id="card">
 
-        <div class="bg-blue-900 rounded-t-md text-center text-white p-4" id="cardTitle">
+        <div class="shrink bg-blue-900 rounded-t-md rounded-b-md text-white p-4" id="cardTitle">
           <h4 v-html="slide.value.name"></h4>
         </div>
 
-        <div class="rounded-b-md bg-white text-black flex flex-row gap-8 p-8" id="cardBody">
+        <div class="flex-1 bg-white text-black rounded-r-md flex flex-col items-center gap-12 p-8" id="cardBody">
 
-          <div class="flex flex-col items-stretch gap-8" id="cardBodyLeft">
-            <img class="rounded-md border-4 border-black w-fit" :src="slide.value.image.thumbnail.src" :alt="slide.value.alt" id="cardImage">
-              <div class="text-center" id="cardButton">
-                <Button button-text="Buy" button-class="w-3/4 text-md text-white border-2 border-black bg-blue-900 pr-8" @click="btnClick(slide.value.link)" />
-              </div>
+          <div class="flex flex-col items-center gap-8">
+            <img class="rounded-md border-4 border-black w-fit hover:border-4 hover:border-blue-400 focus:border-4 focus:border-blue-400"
+                 :src="slide.value.image.thumbnail.src" :alt="slide.value.alt" id="cardImage" @click="btnClick(slide.value.link)">
+            <div class="text-center" id="cardButton">
+              <Button button-text="Buy Online" button-class="rounded-md text-md text-white border-2 border-black bg-blue-900 pr-8" @click="btnClick(slide.value.link)" />
+            </div>
           </div>
 
-          <div class="" id="cardBodyRight">
-            <p v-html="slide.value.description"></p>
+          <div class="text-justify" id="cardBodyRight">
+            <p v-html="slide.value.description" class="text-lg"></p>
           </div>
+
         </div>
 
       </div>
@@ -69,7 +71,10 @@ const btnClick = (url) => {
 <style>
 
 svg.carousel__icon {
-  fill: #1C315E;
+  fill: #60a5fa;
+  scale: 200%;
+
 }
+
 
 </style>
