@@ -41,7 +41,7 @@ const btnClick = (url) => {
         <div class="flex-1 bg-white text-black rounded-r-md flex flex-col items-center gap-12 p-8" id="cardBody">
 
           <div class="flex flex-col items-center gap-8">
-            <img class="rounded-md border-4 border-black w-fit hover:border-4 hover:border-blue-400 focus:border-4 focus:border-blue-400"
+            <img class="rounded-md w-fit hover:border-4 hover:border-blue-400 focus:border-4 focus:border-blue-400"
                  :src="slide.value.image.thumbnail.src" :alt="slide.value.alt" id="cardImage" @click="btnClick(slide.value.link)">
             <div class="text-center" id="cardButton">
               <Button button-text="Buy Online" button-class="rounded-md text-md text-white border-2 border-black bg-blue-900 pr-8" @click="btnClick(slide.value.link)" />
