@@ -21,7 +21,6 @@ const getData = async () => {
   const response = await axios.get(aboutURL)
   console.log(response.data)
   data.value = response.data
-  console.log(data.value)
 }
 
 const toggleContactForm = () => {
