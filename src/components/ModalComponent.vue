@@ -17,12 +17,15 @@ const props = defineProps({
   }
 })
 
-
 defineEmits(['closeModal'])
 
 const isMobile = ref(null)
 const showContent = ref(false)
 const pos = "absolute"
+
+const toggleModal = () => {
+  showContent.value = false
+}
 
 onMounted(() => {
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -34,7 +37,6 @@ onMounted(() => {
 
 <template>
   <Teleport to="body">
-
     <Transition name="modal-outer" @after-enter="showContent=true" @after-leave="showContent=false">
       <div v-if="isActive && !isMobile" :style="{position: pos, top: String(props.mouseY) + 'px', left: String(props.mouseX) + 'px'}"
            :class="{modalWrapperMobile: isMobile}" class="rounded-lg overflow-y-scroll bg-white bg-op-30 max-h-96 max-w-screen-md">
@@ -61,13 +63,24 @@ onMounted(() => {
 
       </div>
     </Transition>
-
   </Teleport>
 
 </template>
 
 
 <style scoped>
+
+.modal-mask {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
 
 .modalWrapperMobile {
   position: absolute;

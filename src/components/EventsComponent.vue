@@ -103,6 +103,7 @@ await getGoogleCalendarEvents()
 
 
   <div class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
+  <div v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
 
     <FullCalendar class="min-h-fit" ref="fullCalendar" :options="calendarOptions"/>
 
@@ -130,7 +131,7 @@ await getGoogleCalendarEvents()
         </div>
     </ModalComponent>
   </div>
-  
+
 </template>
 
 
@@ -140,4 +141,14 @@ button {
   @apply bg-blue-900 text-white p-2 rounded-lg border-2 border-black
 }
 
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
 </style>
