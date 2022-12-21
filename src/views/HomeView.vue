@@ -22,11 +22,9 @@ const data = ref("")
 const getData = async () => {
   const response = await axios.get(homeUrl)
   data.value = response.data
-  console.log(data.value)
 }
 
 await getData()
-
 
 </script>
 
