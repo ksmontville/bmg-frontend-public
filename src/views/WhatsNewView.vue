@@ -27,7 +27,7 @@ const openStoreLink = (url) => {
           <figure>
             <img class="bg-white border-4 border-white rounded-md" :src="props.imageSrc"
                  :height="props.imageHeight" :width="props.imageWidth" :alt="props.imageAlt">
-            <figcaption class="text-white text-center italic">{{ props.imageAlt }}</figcaption>
+            <figcaption class="text-white text-center italic mt-4">{{ props.imageAlt }}</figcaption>
           </figure>
         <Button :button-text="props.storeLinkText" button-class="bg-white text-black" @click="openStoreLink(props.storeLink)"/>
         </div>
