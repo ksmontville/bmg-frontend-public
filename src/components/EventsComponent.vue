@@ -112,10 +112,10 @@ await getGoogleCalendarEvents()
               <strong>Start: {{ event.start_time.slice(0, -3)}}</strong>
               <strong>End: {{ event.end_time.slice(0, -3)}}</strong>
             </li>
-            <li class="flex flex-row gap-4">
+            <li class="flex flex-row items-center gap-6">
               <button class="" @click="addToCalendar(calendarLinkId)">Add to calendar</button>
               <button v-if="event.store_link" @click="openStoreLink(event.store_link)">Register</button>
-              <label v-else>Register for this event in-store.</label>
+              <label v-else class="text-lg">Register for this event in-store.</label>
             </li>
           </ul>
         </div>
