@@ -25,7 +25,7 @@ const openStoreLink = (url) => {
     <span v-html="props.subText" class="text-lg"></span>
         <div v-if="props.imageSrc" class="self-center p-4 flex flex-col items-center gap-12" id="heroImage">
           <figure>
-            <img class="bg-white border-4 border-blue-900 rounded-md" :src="props.imageSrc"
+            <img class="bg-white border-4 border-white rounded-md" :src="props.imageSrc"
                  :height="props.imageHeight" :width="props.imageWidth" :alt="props.imageAlt">
             <figcaption class="text-white text-center italic">{{ props.imageAlt }}</figcaption>
           </figure>
