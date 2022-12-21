@@ -51,7 +51,7 @@ const openStoreLink = (url) => {
 
 const addToCalendar = (eventId) => {
   console.log(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com&scp=ALL`)
-  window.open(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com&scp=ALL`)
+  window.open(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=YWtvbHE1M3NzaDljYW1yZGVnOGJjNW1ibDQgM2JmY2FjOTJhYjE1Y2Y4MzlkMTExY2ZhMTMyNjY4YmIxOGMyMjQ3M2I4ZjE5YTMxOGY1ZmIyMmExNzhjNTZhMUBn&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com`)
 }
 const toggleEventModal  = () => {
   eventModalActive.value = !eventModalActive.value
