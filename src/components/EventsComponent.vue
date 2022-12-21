@@ -111,7 +111,7 @@ await getGoogleCalendarEvents()
             <li class="flex flex-row gap-4">
               <button class="" @click="addToCalendar(calendarLinkId)">Add to calendar</button>
               <button v-if="event.store_link" @click="openStoreLink(event.store_link)">Register</button>
-              <label>Register for this event instore.</label>
+              <label v-else>Register for this event in-store.</label>
             </li>
           </ul>
         </div>
