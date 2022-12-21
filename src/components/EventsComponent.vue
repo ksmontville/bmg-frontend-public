@@ -50,7 +50,8 @@ const openStoreLink = (url) => {
 }
 
 const addToCalendar = (eventId) => {
-  window.open(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com`)
+  console.log(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com&scp=ALL`)
+  window.open(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com&scp=ALL`)
 }
 const toggleEventModal  = () => {
   eventModalActive.value = !eventModalActive.value
