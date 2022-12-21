@@ -32,7 +32,7 @@ const btnClick = (url) => {
   <Carousel :wrap-around="true" :breakpoints="breakpoints" :settings="settings">
 
     <Slide v-for="slide in props.slides" :key="slide.id">
-      <div class="flex flex-col items-stretch w-full min-h-full ml-0 mr-0 md:ml-4 md:mr-4" id="card">
+      <div class="flex flex-col items-stretch w-full min-h-full ml-1 mr-1 md:ml-4 md:mr-4" id="card">
 
         <div class="shrink bg-blue-900 rounded-t-md rounded-b-md text-white p-4" id="cardTitle">
           <h4 v-html="slide.value.name"></h4>
