@@ -3,7 +3,7 @@ import EventsComponent from "../components/EventsComponent.vue"
 import ButtonComponent from "../components/ButtonComponent.vue";
 
 const subToCalendar = () => {
-  window.open('https://calendar.google.com/calendar/embed?src=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com&ctz=America%2FNew_York')
+  window.open('https://calendar.google.com/calendar/u/0/r?cid=M2JmY2FjOTJhYjE1Y2Y4MzlkMTExY2ZhMTMyNjY4YmIxOGMyMjQ3M2I4ZjE5YTMxOGY1ZmIyMmExNzhjNTZhMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t')
 }
 
 </script>

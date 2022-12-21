@@ -67,7 +67,6 @@ const handleEventClick = (eventClickInfo) => {
     if(eventClickInfo.event.title === events[i].title) {
       calendarLinkId.value = eventClickInfo.event.url.slice(42)
       event.value = events[i]
-      console.log(calendarLinkId.value)
     }
 
   }
