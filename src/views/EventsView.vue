@@ -3,7 +3,7 @@ import EventsComponent from "../components/EventsComponent.vue"
 import ButtonComponent from "../components/ButtonComponent.vue";
 
 const subToCalendar = () => {
-  window.open('https://calendar.google.com/calendar/u/0/r?cid=M2JmY2FjOTJhYjE1Y2Y4MzlkMTExY2ZhMTMyNjY4YmIxOGMyMjQ3M2I4ZjE5YTMxOGY1ZmIyMmExNzhjNTZhMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t')
+  window.open(import.meta.env.VITE_CALENDAR_URL)
 }
 
 </script>

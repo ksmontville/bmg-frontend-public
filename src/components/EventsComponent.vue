@@ -50,7 +50,6 @@ const openStoreLink = (url) => {
 }
 
 const addToCalendar = (eventId) => {
-  console.log(`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${eventId}&tmsrc=3bfcac92ab15cf839d111cfa132668bb18c22473b8f19a318f5fb22a178c56a1%40group.calendar.google.com&scp=ALL`)
   window.open(`https://calendar.google.com/calendar/u/0/r/eventedit/copy/${eventId}/a3Ntb250dmlsbGVAZ21haWwuY29t`)
 }
 const toggleEventModal  = () => {
@@ -73,17 +72,11 @@ const handleEventClick = (eventClickInfo) => {
   toggleEventModal()
 }
 
-const handleDateClick = (eventClickInfo) => {
-  toggleEventsModal()
-
-}
-
 const calendarOptions = {
   plugins: [dayGridPlugin, interactionPlugin, googleCalendarPlugin],
   initialView: 'dayGridMonth',
   dayMaxEventRows: false,
   eventClick: handleEventClick,
-  dateClick: handleDateClick,
   eventDisplay: "block",
   eventBackgroundColor: "#1e3a8a",
   googleCalendarApiKey: import.meta.env.VITE_CALENDAR_API_KEY,
@@ -97,10 +90,7 @@ await getEvents()
 await getGoogleCalendarEvents()
 </script>
 
-
 <template>
-
-
   <div class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
   <div v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
 
