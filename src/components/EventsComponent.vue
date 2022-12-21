@@ -109,8 +109,8 @@ await getGoogleCalendarEvents()
 <!--              <strong>End: {{ event.end_time.slice(0, -3) }}, {{ event.end_date}}</strong>-->
 <!--            </li>-->
             <li class="flex flex-col items-center gap-2 mb-4">
-              <strong class="text-xl">Start: {{ String(Number(event.start_time.slice(0, -5)) % 12) + event.start_time.slice(2) }}</strong>
-              <strong class="text-xl">End: {{ event.end_time.slice(0, -3)}}</strong>
+              <strong class="text-xl">Start: {{ String(Number(event.start_time.slice(0, -6)) % 12) + event.start_time.slice(2, -3) }}</strong>
+              <strong class="text-xl">End: {{ String(Number(event.end_time.slice(0, -6)) % 12) + event.end_time.slice(2, -3) }}</strong>
             </li>
             <li class="flex flex-row items-center gap-6">
               <button class="" @click="addToCalendar(calendarLinkId)">Add to calendar</button>
