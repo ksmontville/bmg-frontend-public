@@ -56,10 +56,6 @@ const toggleEventModal  = () => {
   eventModalActive.value = !eventModalActive.value
 }
 
-const toggleEventsModal  = () => {
-  eventsModalActive.value = !eventsModalActive.value
-}
-
 const handleEventClick = (eventClickInfo) => {
   eventClickInfo.jsEvent.preventDefault()
   for(let i=0; i < events.length; i++) {
