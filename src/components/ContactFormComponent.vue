@@ -3,9 +3,9 @@ import {ref} from "vue";
 import emailjs from '@emailjs/browser'
 
 const my_name = 'blackmoongames'
-const name = ref('')
-const email = ref('')
-const message = ref('')
+const name = ref(null)
+const email = ref(null)
+const message = ref(null)
 const messageSent = ref(null)
 
 const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID
@@ -33,7 +33,7 @@ const sendEmail = ()=> {
 
 <template>
   <div v-if="!messageSent" class="bg-op-0" id="contactFormContainer">
-    <form class="flex flex-col gap-8" @submit.prevent id="contactForm">
+    <form class="flex flex-col gap-8" @submit.prevent id="contactForm" @submit="sendEmail">
       <label class="underline text-center text-3xl"><strong>How Can We Help You?</strong></label>
       <div class="flex flex-row gap-2">
         <label class="underline"><strong>Name</strong></label>
@@ -67,7 +67,7 @@ const sendEmail = ()=> {
       </textarea>
 
       <input class="bg-blue-900 text-white rounded-lg w-1/2 p-2 self-center focus:border-4 focus:border-blue-400 hover:border-2 hover:border-blue-400"
-             type="submit" value="Send" @click="sendEmail">
+             type="submit" value="Send">
     </form>
 
   </div>
