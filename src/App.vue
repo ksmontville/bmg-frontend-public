@@ -8,7 +8,7 @@ const apiNav = import.meta.env.VITE_API_NAV
 <template>
 
   <div class="wrapper min-h-screen flex flex-col">
-    <nav class="">
+    <nav>
     <Suspense>
       <Navbar :api-url=apiNav />
       <template #fallback>
