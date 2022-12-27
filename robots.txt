@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://www.blackmoongames.com/sitemap.xml
+Sitemap: https://www.black-moon-games.com/sitemap.xml
