@@ -5,7 +5,6 @@ import AboutView from '../views/AboutView.vue'
 import ShopView from '../views/ShopView.vue'
 import SinglesStoreView from '../views/SinglesStoreView.vue'
 import AdminView from '../views/AdminView.vue'
-import SitemapView from '../views/SitemapView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,11 +38,6 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: AdminView
-    },
-    {
-      path: '/sitemap',
-      name: 'sitemap',
-      component: SitemapView
     },
   ]
 })
