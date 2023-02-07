@@ -38,6 +38,7 @@ const getEvents = async () => {
 const getGoogleCalendarEvents = async () => {
   const response = await axios.get(`https://www.googleapis.com/calendar/v3/calendars/${import.meta.env.VITE_CALENDAR_ID}/events?key=${import.meta.env.VITE_CALENDAR_API_KEY}`)
   googleCalendarEvents.push(response.data.items)
+  console.log(googleCalendarEvents)
 }
 
 const getMouseCoords = (event) => {
