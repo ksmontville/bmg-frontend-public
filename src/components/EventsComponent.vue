@@ -33,6 +33,7 @@ const getEvents = async () => {
   for(let i=0; i < data.value.length; i++) {
     const event = await axios.get(`${apiUrl}/${data.value[i].id}/`)
     events.push(event.data)
+    console.log(events)
   }
 }
 const getGoogleCalendarEvents = async () => {
