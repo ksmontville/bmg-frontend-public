@@ -34,13 +34,11 @@ const getEvents = async () => {
   for(let i=0; i < data.value.length; i++) {
     const event = await axios.get(`${apiUrl}/${data.value[i].id}/`)
     events.push(event.data)
-    console.log(events)
   }
 }
 const getGoogleCalendarEvents = async () => {
   const response = await axios.get(`https://www.googleapis.com/calendar/v3/calendars/${import.meta.env.VITE_CALENDAR_ID}/events?key=${import.meta.env.VITE_CALENDAR_API_KEY}`)
   googleCalendarEvents.push(response.data.items)
-  console.log(googleCalendarEvents)
 }
 
 const getMouseCoords = (event) => {
