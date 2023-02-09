@@ -11,8 +11,8 @@
   </div>
 
   <div class="text-center text-2xl text-white p-8 m-4">
-    You can still visit the <a href="https://www.shop-black-moon.com/" class="text-blue-400">store page</a> for event info and registration,
-    or the <a href="https://blackmoonnh.ionsuite.com/" class="text-blue-400">Magic singles shop</a> for card orders.
+    You can still visit the <a href="https://www.shop-black-moon.com/" class="text-blue-400" target="_blank" referrerpolicy="no-referrer">store page</a> for event info and registration,
+    or the <a href="https://blackmoonnh.ionsuite.com/" class="text-blue-400" target="_blank" referrerpolicy="no-referrer">Magic singles shop</a> for card orders.
   </div>
 
 </template>
