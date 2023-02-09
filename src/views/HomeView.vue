@@ -34,7 +34,6 @@ const timedOut = ref(null)
 
 const timeout = async () => {
   await wait(1000)
-  console.log("There was an error.")
 }
 
 try {
@@ -59,7 +58,6 @@ watch(timedOut, await timeout)
   </Suspense>
 
   <div v-if="timedOut" class="text-center text-5xl text-white">
-    There was an error.
     <MaintenancePage />
   </div>
 
