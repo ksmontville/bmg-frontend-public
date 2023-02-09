@@ -109,12 +109,12 @@ await getGoogleCalendarEvents()
 
 <template>
 
-  <div v-if="timedOut" class="text-center text-5xl text-white">
-    <MaintenancePage />
-  </div>
 
-  <div v-else class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
-   <div v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
+  <div class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
+    <div v-if="timedOut" class="text-center text-5xl text-white">
+      <MaintenancePage />
+    </div>
+   <div v-else v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
 
     <FullCalendar class="min-h-fit" ref="fullCalendar" :options="calendarOptions"/>
 
