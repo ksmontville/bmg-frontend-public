@@ -33,18 +33,17 @@ function wait(time) {
 const timedOut = ref(null)
 
 const timeout = async () => {
-  await wait(3000)
-  timedOut.value = true
+  await wait(1000)
+  console.log("There was an error.")
 }
 
 try {
   await getData()
 } catch (error) {
-  timeout()
+  timedOut.value = true
 }
 
-watch(timedOut, timeout)
-
+watch(timedOut, await timeout)
 
 </script>
 
@@ -59,81 +58,72 @@ watch(timedOut, timeout)
       </template>
   </Suspense>
 
+  <div v-if="timedOut" class="text-center text-5xl text-white">
+    There was an error.
+    <MaintenancePage />
+  </div>
 
-  <Suspense>
-    <template #fallback>
-      <div v-if="timedOut" class="text-center text-5xl text-white">
-        <MaintenancePage />
-      </div>
-    </template>
+  <div v-else class="flex flex-row flex-wrap justify-center items-baseline gap-x-16 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
 
-    <div class="flex flex-row flex-wrap justify-center items-baseline gap-x-16 gap-y-8 mt-4 mb-4" id="landingPageWrapper">
+    <div class="flex flex-col p-8 gap-8 text-white" id="hero">
 
-      <div class="flex flex-col p-8 gap-8 text-white" id="hero">
-
-        <div class="" id="heroText">
-          <span v-html="data.hero_text" class=""></span>
-        </div>
-
-        <div class="mt-4" id="heroSubTextOne">
-          <p v-html="data.sub_text_one" class=""></p>
-        </div>
-
-        <div class="mt-6 italic" id="heroSubTextTwo">
-          <p v-html="data.sub_text_two"></p>
-        </div>
-
-        <div class="flex flex-row items-center gap-x-6" id="heroButton">
-          <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
-        </div>
-
+      <div class="" id="heroText">
+        <span v-html="data.hero_text" class=""></span>
       </div>
 
-      <div class="flex-1" id="whatsNewView">
-        <Suspense>
-          <WhatsNewView :main-text="data.whats_new_header" :sub-text="data.whats_new_text" :image-src="data.hero_image.meta.download_url"
-                        :image-alt="data.hero_image_description" :image-height="data.hero_image.height"
-                        :image-width="data.hero_image.height" :store-link="data.whats_new_link" :store-link-text="data.whats_new_link_text"/>
-
-          <template #fallback>
-            <div class="text-center text-3xl text-white">
-              Fetching announcements data, please wait...
-            </div>
-          </template>
-        </Suspense>
+      <div class="mt-4" id="heroSubTextOne">
+        <p v-html="data.sub_text_one" class=""></p>
       </div>
 
-      <div class="max-w-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl" id="newProductsView">
-        <Suspense>
-          <NewProductView :api-url=apiProducts />
-
-          <template #fallback>
-            <div class="text-center text-3xl text-white">
-              Fetching product data, please wait...
-            </div>
-          </template>
-        </Suspense>
-
+      <div class="mt-6 italic" id="heroSubTextTwo">
+        <p v-html="data.sub_text_two"></p>
       </div>
 
-      <div class="" id="magicSinglesView">
-        <Suspense>
-          <SinglesView :api-url=apiSingles />
+      <div class="flex flex-row items-center gap-x-6" id="heroButton">
+        <Button button-text="Shop Black Moon" button-class="bg-blue-900 p-4" @click="shopBtnClick" />
+      </div>
 
-          <template #fallback>
-            <div class="text-center text-3xl text-white">
-            Fetching data, please wait...
+    </div>
+
+    <div class="flex-1" id="whatsNewView">
+      <Suspense>
+        <WhatsNewView :main-text="data.whats_new_header" :sub-text="data.whats_new_text" :image-src="data.hero_image.meta.download_url"
+                      :image-alt="data.hero_image_description" :image-height="data.hero_image.height"
+                      :image-width="data.hero_image.height" :store-link="data.whats_new_link" :store-link-text="data.whats_new_link_text"/>
+
+        <template #fallback>
+          <div class="text-center text-3xl text-white">
+            Fetching announcements data, please wait...
           </div>
         </template>
-        </Suspense>
-      </div>
+      </Suspense>
+    </div>
 
-      </div>
+    <div class="max-w-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl" id="newProductsView">
+      <Suspense>
+        <NewProductView :api-url=apiProducts />
 
-  </Suspense>
+        <template #fallback>
+          <div class="text-center text-3xl text-white">
+            Fetching product data, please wait...
+          </div>
+        </template>
+      </Suspense>
 
+    </div>
 
+    <div class="" id="magicSinglesView">
+      <Suspense>
+        <SinglesView :api-url=apiSingles />
 
+        <template #fallback>
+          <div class="text-center text-3xl text-white">
+          Fetching data, please wait...
+        </div>
+      </template>
+      </Suspense>
+    </div>
+  </div>
 </template>
 
 <style scoped>
