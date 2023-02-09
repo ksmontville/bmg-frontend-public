@@ -6,7 +6,8 @@ import BannerComponent from "../components/BannerComponent.vue"
 import SinglesView from "./SinglesView.vue"
 import NewProductView from "./NewProductView.vue"
 import WhatsNewView from "./WhatsNewView.vue"
-import MaintenancePage from "@/views/MaintenancePage";
+import MaintenancePage from "./MaintenancePage.vue"
+
 
 const homeUrl = import.meta.env.VITE_API_HOME
 const shopUrl = import.meta.env.VITE_SHOP_URL
