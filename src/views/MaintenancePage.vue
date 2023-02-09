@@ -6,7 +6,7 @@
 
 <template>
 
-  <div class="text-center text-5xl text-white p-8 m-auto">
+  <div class="text-center text-5xl text-white p-8 m-12">
     We are currently undergoing routine maintenance. This shouldn't take too long, please check back later!
   </div>
 
