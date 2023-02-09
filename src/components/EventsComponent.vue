@@ -97,14 +97,14 @@ const timeout = async () => {
 try {
   await getData()
   await getEvents()
+  await getEvents()
+  await getGoogleCalendarEvents()
 } catch (error) {
   timedOut.value = true
 }
 
 watch(timedOut, await timeout)
 
-await getEvents()
-await getGoogleCalendarEvents()
 </script>
 
 <template>

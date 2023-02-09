@@ -10,6 +10,11 @@
     We are currently undergoing routine maintenance. This shouldn't take too long, please check back later!
   </div>
 
+  <div class="text-center text-2xl text-white p-8 m-12">
+    You can still visit the <a href="https://www.shop-black-moon.com/">store page</a> for event info and registration,
+    or the <a href="https://blackmoonnh.ionsuite.com/">Magic singles shop</a> for card orders.
+  </div>
+
 </template>
 
 
