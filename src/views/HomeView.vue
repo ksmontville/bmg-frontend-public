@@ -8,7 +8,6 @@ import NewProductView from "./NewProductView.vue"
 import WhatsNewView from "./WhatsNewView.vue"
 import MaintenancePage from "./MaintenancePage.vue"
 
-
 const homeUrl = import.meta.env.VITE_API_HOME
 const shopUrl = import.meta.env.VITE_SHOP_URL
 const apiBanner = import.meta.env.VITE_API_BANNER

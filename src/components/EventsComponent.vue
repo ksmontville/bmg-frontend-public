@@ -1,6 +1,7 @@
 <script setup>
-import {onMounted, reactive, ref} from "vue";
+import {onMounted, reactive, ref, watch} from "vue";
 import ModalComponent from "../components/ModalComponent.vue"
+import MaintenancePage from "../views/MaintenancePage.vue"
 import axios from "axios";
 import "@fullcalendar/core/vdom.js"
 import FullCalendar from "@fullcalendar/vue3"
@@ -83,13 +84,35 @@ const calendarOptions = {
   }
 }
 
-await getData()
+function wait(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+const timedOut = ref(null)
+
+const timeout = async () => {
+  await wait(1000)
+}
+
+try {
+  await getData()
+} catch (error) {
+  timedOut.value = true
+}
+
+watch(timedOut, await timeout)
+
 await getEvents()
 await getGoogleCalendarEvents()
 </script>
 
 <template>
-  <div class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
+
+  <div v-if="timedOut" class="text-center text-5xl text-white">
+    <MaintenancePage />
+  </div>
+
+  <div v-else class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
   <div v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
 
     <FullCalendar class="min-h-fit" ref="fullCalendar" :options="calendarOptions"/>

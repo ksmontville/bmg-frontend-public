@@ -1,7 +1,8 @@
 <script setup>
-import {ref} from "vue";
+import {ref, watch} from "vue";
 import axios from "axios";
 import ButtonComponent from "../components/ButtonComponent.vue";
+import MaintenancePage from "./MaintenancePage.vue"
 import ModalComponent from "../components/ModalComponent.vue";
 
 const aboutURL = import.meta.env.VITE_API_ABOUT
@@ -35,13 +36,33 @@ const getBtnText = () => {
   }
 }
 
-await getData()
+function wait(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+const timedOut = ref(null)
+
+const timeout = async () => {
+  await wait(1000)
+}
+
+try {
+  await getData()
+} catch (error) {
+  timedOut.value = true
+}
+
+watch(timedOut, await timeout)
 </script>
 
 
 <template>
 
-  <div class="flex flex-col" id="about-wrapper" @click="getMouseCoords">
+  <div v-if="timedOut" class="text-center text-5xl text-white">
+    <MaintenancePage />
+  </div>
+
+  <div v-else class="flex flex-col" id="about-wrapper" @click="getMouseCoords">
 
     <div class="flex flex-col text-white gap-4" id="top">
 
