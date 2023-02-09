@@ -96,6 +96,7 @@ const timeout = async () => {
 
 try {
   await getData()
+  await getEvents()
 } catch (error) {
   timedOut.value = true
 }
