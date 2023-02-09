@@ -5,6 +5,7 @@ import AboutView from '../views/AboutView.vue'
 import ShopView from '../views/ShopView.vue'
 import SinglesStoreView from '../views/SinglesStoreView.vue'
 import AdminView from '../views/AdminView.vue'
+import MaintenancePage from '../views/MaintenancePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,12 @@ const router = createRouter({
       name: 'admin',
       component: AdminView
     },
+    {
+      path: '/maintenance',
+      name: 'maintenance',
+      component: MaintenancePage
+    },
+
   ]
 })
 
