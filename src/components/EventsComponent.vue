@@ -113,7 +113,7 @@ await getGoogleCalendarEvents()
   </div>
 
   <div v-else class="z-0 text-white mb-16 mt-8" @click="getMouseCoords">
-  <div v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
+   <div v-if="eventModalActive" class="modal-mask z-20" @click="toggleEventModal"></div>
 
     <FullCalendar class="min-h-fit" ref="fullCalendar" :options="calendarOptions"/>
 
